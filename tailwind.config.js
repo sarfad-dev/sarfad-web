@@ -1,9 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.ejs"],
-  mode: "jit",
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
-  plugins: [],
-};
+  variants: {
+    extend: {},
+  },
+  plugins: [
+                  require('@tailwindcss/typography'),
+                  require('daisyui'),
+           ],
+}
