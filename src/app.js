@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5001;
+const port = 3000;
 const ejs = require('ejs');
 const path = require('path');
 
@@ -22,5 +22,5 @@ app.get("/", (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`This is port no. ${port}`);
+    console.log(`Listening - http://localhost:${port}/`);
 });
