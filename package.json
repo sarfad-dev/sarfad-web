@@ -1,18 +1,23 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "tailwind-with-ejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "devcss": "postcss public/styles/tailwind.css -o public/styles/style.css -w",
+    "dev": " nodemon index.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@astrojs/node": "^8.2.5",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.9.1",
-    "tailwindcss": "^3.4.3"
+    "autoprefixer": "^10.4.7",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.5"
+  },
+  "devDependencies": {
+    "postcss-cli": "^10.0.0"
   }
 }

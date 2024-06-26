@@ -1,0 +1,42 @@
+const express = require('express');
+const ejs = require('ejs');
+const colors = require('colors');
+
+const app = express();
+const port = 3000; // Define your port
+
+// Page properties
+app.set('view engine', 'ejs');
+app.use(express.static('views'));
+app.use('/favicon.ico', express.static('favicon.ico'));
+
+// Routes
+app.get('/', (req, res) => res.render('index'));
+
+// app.get('/live', (req, res) => res.render('live'));
+// app.get('/locate', (req, res) => res.render('locate'));
+// app.get('/control', (req, res) => res.render('control'));
+// app.get('/countdown', (req, res) => res.render('countdown'));
+
+// Function to print all routes
+const listRoutes = (app) => {
+    console.log(colors.green('\nApp listening on the following routes:'));
+    console.log(colors.white('---------------------------------------'));
+    app._router.stack.forEach((middleware) => {
+        if (middleware.route) { 
+            const route = middleware.route;
+            console.log(colors.green('Route: ') + colors.reset(`${route.path}`));
+        } else if (middleware.name === 'router') { // Routes added as router middleware
+            middleware.handle.stack.forEach((handler) => {
+                const route = handler.route;
+                route && console.log(colors.green('Route: ') + colors.reset(`${route.path}`));
+            });
+        }
+    });
+    console.log(colors.white('---------------------------------------'));
+};
+
+app.listen(port, () => {
+    listRoutes(app);
+    console.log(colors.green(`Server running at http://localhost:${port}/\n`));
+});
