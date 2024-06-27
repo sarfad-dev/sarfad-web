@@ -4,10 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/tailwind.css" rel="stylesheet">
+  <style>
+    body {
+      background-size: 40px 40px;
+      background-image: linear-gradient(
+          to right,
+          #dddddd 1px,
+          transparent 1px
+        ),
+        linear-gradient(to bottom, #dddddd 1px, transparent 1px);
+    }
+  </style>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <header class="w-full text-sm py-4 dark:bg-neutral-800">
+    <nav class="max-w-[85rem] w-full mx-auto px-8 sm:px-36 flex items-center justify-between" aria-label="Global">
+      <a class="text-3xl font-normal dark:text-white" href="#">SARFAD</a>
+      <button class="sm:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600 dark:text-neutral-400 dark:border-neutral-400" id="menu-button">
+        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+      <div class="hidden sm:flex flex-row items-center gap-12" id="menu">
+        <a class="font-medium hover:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Lorem</a>
+        <a class="font-medium hover:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Ipsum</a>
+        <a class="font-medium hover:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Dolor</a>
+        <a class="font-medium hover:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Sit</a>
+      </div>
+    </nav>
+    <div class="sm:hidden px-6 pb-4 hidden" id="dropdown-menu">
+      <a class="block px-4 py-2 mt-2 text-sm font-medium hover:text-gray-500 bg-gray-200 rounded-lg dark:text-neutral-400 dark:bg-neutral-700 dark:hover:text-neutral-500 dark:hover:bg-neutral-600" href="#">Lorem</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-medium hover:text-gray-500 bg-gray-200 rounded-lg dark:text-neutral-400 dark:bg-neutral-700 dark:hover:text-neutral-500 dark:hover:bg-neutral-600" href="#">Ipsum</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-medium hover:text-gray-500 bg-gray-200 rounded-lg dark:text-neutral-400 dark:bg-neutral-700 dark:hover:text-neutral-500 dark:hover:bg-neutral-600" href="#">Dolor</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-medium hover:text-gray-500 bg-gray-200 rounded-lg dark:text-neutral-400 dark:bg-neutral-700 dark:hover:text-neutral-500 dark:hover:bg-neutral-600" href="#">Sit</a>
+    </div>
+  </header>
+
+  <div>
+    <div class="max-w-[85rem] w-full mx-auto px-8 sm:px-36 text-center mt-8">
+      <h1 class="text-9xl font-semibold">
+        SARFAD
+      </h1>
+      <h2 class="text-6xl font-medium mt-2">
+        CanSat tým
+      </h2>
+    </div>
+    <div class="max-w-[85rem] w-full mx-auto px-8 sm:px-36">
+      <h1 class="text-3xl font-bold underline mt-8">
+        Hello world!
+      </h1>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function() {
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
