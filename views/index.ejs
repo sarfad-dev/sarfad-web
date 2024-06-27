@@ -11,6 +11,36 @@
       padding: 0;
     }
 
+    .hidden-section {
+      background: white;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hidden-section h2 {
+      font-size: 3rem;
+    }
+
+    .hidden-section p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .hidden-section button {
+      font-size: 1.25rem;
+    }
+
+    .hidden-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .rotate-6 {
+      transform: rotate(-6deg);
+    }
+
+
     .background-grid {
       background-size: 40px 40px;
       background-image: linear-gradient(to right,
@@ -43,9 +73,17 @@
     #main-image {
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 80%;
       max-width: 600px;
+      height: auto;
       z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      #main-image {
+        width: 400px;
+        max-width: 85%;
+      }
     }
   </style>
 </head>
@@ -90,27 +128,22 @@
         CanSat tým
       </h2>
     </div>
-    <img id="main-image" src="https://i.imgur.com/xYPZZ7S.png" alt="cansat heading image">
+    <img id="main-image" class="mx-auto" src="https://i.imgur.com/xYPZZ7S.png" alt="cansat heading image">
+
   </div>
 
-  <div id="hidden-section" class="hidden-section">
-    <h2 class="text-3xl md:text-6xl font-medium">Next Section Content</h2>
-    <p class="text-lg md:text-2xl mt-4">This is the next section. It starts where the image ends and has a plain white
-      background. Here's some dummy text to enable scrolling and see the effect in action.</p>
-    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend
-      gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.</p>
-    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend
-      gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.</p>
-    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend
-      gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.</p>
-    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend
-      gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.</p>
+  <div id="hidden-section" class="hidden-section mx-4 md:mx-32 mt-8">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Co je to CanSat?</h2>
+        <p class="text-base md:text-lg mt-4">CanSat je soutěžní projekt pro studenty, kterou pořádá Evropská kosmická agentura (ESA). Cílem CanSat soutěže je vytvořit funkční model satelitu, který má rozměry podobné plechovce. Tyto CanSats jsou vypouštěny z rakety ve výšce až jednoho kilometru nad zemí.</p>
+      </div>
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="https://i.imgur.com/Xa48B4g.png" alt="Image 1" class="max-w-full h-auto">
+      </div>
+    </div>
   </div>
-
+  
   <script>
     document.getElementById('menu-button').addEventListener('click', function () {
       const dropdownMenu = document.getElementById('dropdown-menu');
