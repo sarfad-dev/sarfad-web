@@ -3,7 +3,6 @@
 import {
     Box,
     Flex,
-    Text,
     IconButton,
     Stack,
     Collapse,
@@ -31,14 +30,18 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
     const color = useColorModeValue('gray.600', 'white')
 
     return (
-        <Box>
+        <Box position="absolute" top="0" w="100%" zIndex={2}> {/* Ensures navbar is on top of the heading */}
             <Flex
                 bg={bg}
                 color={color}
                 minH={'60px'}
-                py={{ base: 9 }}
+                py={{ base: 4 }}
                 px={{ base: 4 }}
-                align={'center'}>
+                align={'center'}
+                justify="space-between"
+                w="100%">
+                
+                {/* Hamburger menu for mobile */}
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
@@ -50,13 +53,17 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Flex flex={1} justify="center" w="100%">
-                    <Flex display={{ base: 'none', md: 'flex' }} justifyContent="space-between">
-                        <DesktopNav navItems={navItems} />
-                    </Flex>
+
+                {/* Desktop Nav Items */}
+                <Flex
+                    flex={1}
+                    justify={'center'}
+                    display={{ base: 'none', md: 'flex' }}>
+                    <DesktopNav navItems={navItems} />
                 </Flex>
             </Flex>
 
+            {/* Mobile Navigation */}
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav navItems={navItems} />
             </Collapse>
@@ -78,9 +85,9 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                 <Box key={navItem.label}>
                     <Box
                         as="a"
-                        px={12}
+                        px={4} // Adjust for spacing in desktop view
                         href={navItem.link ?? '#'}
-                        fontSize={'lg'}
+                        fontSize={'md'}
                         fontWeight={600}
                         color={linkColor}
                         _hover={{
@@ -107,9 +114,9 @@ const MobileNav = ({ navItems }: MobileNavProps) => {
         <Stack bg={bg} p={4} display={{ md: 'none' }}>
             {navItems.map((navItem) => (
                 <Box py={2} as="a" href={navItem.link ?? '#'} key={navItem.label}>
-                    <Text fontWeight={600} color={textColor}>
+                    <Box fontWeight={600} color={textColor}>
                         {navItem.label}
-                    </Text>
+                    </Box>
                 </Box>
             ))}
         </Stack>
