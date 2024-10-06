@@ -8,6 +8,7 @@ import {
     Collapse,
     useColorModeValue,
     useDisclosure,
+    useBreakpointValue,  // Import for responsive handling
 } from '@chakra-ui/react'
 import {
     HamburgerIcon,
@@ -29,44 +30,52 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
     const bg = useColorModeValue('transparent', 'gray.800')
     const color = useColorModeValue('gray.600', 'white')
 
+    const isMobile = useBreakpointValue({ base: true, md: false })
+
     return (
-        <Box position="absolute" top="0" w="100%" zIndex={2}> {/* Ensures navbar is on top of the heading */}
+        <Box position="absolute" top="0" w="100%" zIndex={2} mt="1.2rem  ">
             <Flex
                 bg={bg}
                 color={color}
-                minH={'60px'}
+                minH={'1rem'}
                 py={{ base: 4 }}
                 px={{ base: 4 }}
                 align={'center'}
                 justify="space-between"
                 w="100%">
-                
+
                 {/* Hamburger menu for mobile */}
-                <Flex
-                    flex={{ base: 1, md: 'auto' }}
-                    ml={{ base: -2 }}
-                    display={{ base: 'flex', md: 'none' }}>
-                    <IconButton
-                        onClick={onToggle}
-                        icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-                        variant={'ghost'}
-                        aria-label={'Toggle Navigation'}
-                    />
-                </Flex>
+                {isMobile && (
+                    <Flex
+                        flex={{ base: 1, md: 'auto' }}
+                        ml={{ base: -2 }}
+                        display={{ base: 'flex', md: 'none' }}>
+                        <IconButton
+                            onClick={onToggle}
+                            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+                            variant={'ghost'}
+                            aria-label={'Toggle Navigation'}
+                        />
+                    </Flex>
+                )}
 
                 {/* Desktop Nav Items */}
-                <Flex
-                    flex={1}
-                    justify={'center'}
-                    display={{ base: 'none', md: 'flex' }}>
-                    <DesktopNav navItems={navItems} />
-                </Flex>
+                {!isMobile && (
+                    <Flex
+                        flex={1}
+                        justify={'center'}
+                        display={{ base: 'none', md: 'flex' }}>
+                        <DesktopNav navItems={navItems} />
+                    </Flex>
+                )}
             </Flex>
 
             {/* Mobile Navigation */}
-            <Collapse in={isOpen} animateOpacity>
-                <MobileNav navItems={navItems} />
-            </Collapse>
+            {isMobile && (
+                <Collapse in={isOpen} animateOpacity>
+                    <MobileNav navItems={navItems} />
+                </Collapse>
+            )}
         </Box>
     )
 }
@@ -85,7 +94,7 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                 <Box key={navItem.label}>
                     <Box
                         as="a"
-                        px={4} // Adjust for spacing in desktop view
+                        px={8}
                         href={navItem.link ?? '#'}
                         fontSize={'md'}
                         fontWeight={600}

@@ -22,6 +22,7 @@ const GridBackground = ({ children }: GridBackgroundProps) => {
 		>
 			{children}
 		</Box>
+
 	);
 };
 
