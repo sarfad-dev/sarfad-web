@@ -1,13 +1,34 @@
 'use client'
-import { Link } from '@chakra-ui/next-js'
-import Nav from '../components/Navbar'
+import Nav from '@/components/Navbar';
+import CustomHeading from '@/components/CustomHeading';
+import GridBackground from '@/components/GridBackground';
+import TextContent from '@/components/TextContent';
+import { Box } from '@chakra-ui/react';
 
 export default function Home() {
   return (
     <>
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <Nav></Nav>
-      </div>
+      <GridBackground>
+        <Nav navItems={[
+          { label: 'Domů', link: '/' },
+          { label: 'Lorem', link: '/' },
+          { label: 'Lorem', link: '/' },
+          { label: 'Lorem', link: '/' },
+          { label: 'Lorem', link: '/' },
+          { label: 'Lorem', link: '/' },
+        ]} />
+        <CustomHeading />
+        <Box maxW="6xl" mx="auto" p={8} position="relative" zIndex={1}>
+          <TextContent
+            heading="Co je to CanSat"
+            description='Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
+            funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru.'
+            imageSrc="/vertical.jpg"
+            imageAlt="Rocket"
+            imageCaption="Rocket launch"
+          />
+        </Box>
+      </GridBackground>
     </>
   );
 }
