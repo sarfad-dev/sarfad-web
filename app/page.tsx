@@ -10,11 +10,10 @@ export default function Home() {
     <>
       <Nav navItems={[
         { label: 'Domů', link: '/' },
+        { label: 'Členové', link: '/' },
         { label: 'Lorem', link: '/' },
         { label: 'Lorem', link: '/' },
-        { label: 'Lorem', link: '/' },
-        { label: 'Lorem', link: '/' },
-        { label: 'Lorem', link: '/' },
+        { label: 'Live web', link: '/' },
       ]} />
       <GridBackground>
         <CustomHeading />
