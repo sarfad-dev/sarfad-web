@@ -8,7 +8,7 @@ import {
     Collapse,
     useColorModeValue,
     useDisclosure,
-    useBreakpointValue,  // Import for responsive handling
+    useBreakpointValue,
 } from '@chakra-ui/react'
 import {
     HamburgerIcon,
@@ -116,14 +116,14 @@ interface MobileNavProps {
 }
 
 const MobileNav = ({ navItems }: MobileNavProps) => {
-    const bg = useColorModeValue('white', 'gray.800')
+    const bg = 'transparent'
     const textColor = useColorModeValue('gray.600', 'gray.200')
 
     return (
-        <Stack bg={bg} p={4} display={{ md: 'none' }}>
+          <Stack bg={bg} p={4} display={{ md: 'none' }} zIndex={2}>
             {navItems.map((navItem) => (
                 <Box py={2} as="a" href={navItem.link ?? '#'} key={navItem.label}>
-                    <Box fontWeight={600} color={textColor}>
+                    <Box mb={2} fontWeight={600} color={textColor}>
                         {navItem.label}
                     </Box>
                 </Box>
