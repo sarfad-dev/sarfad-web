@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <Nav navItems={[
         { label: 'Domů', link: '/' },
+        { label: 'Co je to Cansat?', link: '/' },
+        { label: 'Co umí?', link: '/' },
         { label: 'Členové', link: '/' },
-        { label: 'Lorem', link: '/' },
-        { label: 'Lorem', link: '/' },
         { label: 'Live web', link: '/' },
       ]} />
       <GridBackground>
