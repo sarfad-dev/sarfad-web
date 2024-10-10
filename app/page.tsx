@@ -8,26 +8,38 @@ import { Box } from '@chakra-ui/react';
 export default function Home() {
   return (
     <>
-      <Nav navItems={[
-        { label: 'Domů', link: '/' },
-        { label: 'Co je to Cansat?', link: '/' },
-        { label: 'Co umí?', link: '/' },
-        { label: 'Členové', link: '/' },
-        { label: 'Live web', link: '/' },
-      ]} />
-      <GridBackground>
-        <CustomHeading />
-      </GridBackground>
-      {/* <Box maxW="6xl" mx="auto" p={8} position="relative" zIndex={1}>
-          <TextContent
-          heading="Co je to CanSat"
-          description='Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
-          funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru.'
-          imageSrc="/vertical.jpg"
-          imageAlt="Rocket"
-          imageCaption="Rocket launch"
-          />
-          </Box> */}
+      <Box height="100vh" width="100vw">
+        <Nav navItems={[
+          { label: 'Domů', link: '/' },
+          { label: 'Co je to Cansat?', link: '/' },
+          { label: 'Co umí?', link: '/' },
+          { label: 'Členové', link: '/' },
+          { label: 'Live web', link: '/' },
+        ]} />
+        <GridBackground>
+          <CustomHeading />
+        </GridBackground>
+      </Box>
+      <TextContent
+        heading="Co je to CanSat?"
+        description='Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
+        funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru.'
+        image={true}
+        imageSrc="/cansat.svg"
+        imageAlt="Rocket"
+        button={true}
+        buttonText="Zjistit více"
+      />
+      <TextContent
+        heading="Sleduj naší misi živě!"
+        description='Všechna data se během letu ukládají do databáze, 
+        odkud se poté zobrazují na našem webu v různých vizualizacích s aktualizováním v reálném čase'
+        image={true}
+        imageSrc="/live.svg"
+        imageAlt="Rocket"
+        button={true}
+        buttonText="Zobrazit web"
+      />
     </>
   );
 }

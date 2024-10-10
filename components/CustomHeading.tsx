@@ -1,4 +1,8 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { 
+  Box, 
+  Heading, 
+  Text 
+} from "@chakra-ui/react";
 
 const CustomHeading = () => {
   return (
@@ -13,7 +17,7 @@ const CustomHeading = () => {
       <Heading 
         fontSize={{ base: "5xl", md: "7xl", lg: "9xl" }} 
         fontWeight="semibold" 
-		letterSpacing={10}
+		    letterSpacing={10}
       >
         SARFAD
       </Heading>
