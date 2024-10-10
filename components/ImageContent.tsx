@@ -1,8 +1,10 @@
 'use client';
 
-import { Box, Image, Text } from '@chakra-ui/react';
-import React from 'react';
-
+import { 
+	Box, 
+	Image, 
+	Text 
+} from '@chakra-ui/react';
 interface ImageContentProps {
 	src: string;
 	alt: string;
@@ -32,7 +34,7 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 					width="300px"
 					height="600px"
 					backgroundColor="transparent"
-					color="white"
+					color="black"
 					display="flex"
 					justifyContent="start"
 					alignItems="start"
