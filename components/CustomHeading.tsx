@@ -3,8 +3,14 @@ import {
   Heading, 
   Text 
 } from "@chakra-ui/react";
+import { desc } from "framer-motion/client";
 
-const CustomHeading = () => {
+interface CustomHeadingProps {
+  heading: string;
+  description?: string;
+}
+
+const CustomHeading: React.FC<CustomHeadingProps> = ({heading, description}) => {
   return (
     <Box 
       textAlign="center" 
@@ -19,13 +25,13 @@ const CustomHeading = () => {
         fontWeight="semibold" 
 		    letterSpacing={10}
       >
-        SARFAD
+        {heading}
       </Heading>
       <Text 
         fontSize={{ base: "1xl", md: "4xl", lg: "5xl" }} 
         mt={2}
       >
-        CanSat tým
+        {description}
       </Text>
     </Box>
   );

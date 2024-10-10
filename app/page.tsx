@@ -13,11 +13,14 @@ export default function Home() {
           { label: 'Domů', link: '/' },
           { label: 'Co je to Cansat?', link: '/' },
           { label: 'Co umí?', link: '/' },
-          { label: 'Členové', link: '/' },
+          { label: 'Členové', link: '/clenove' },
           { label: 'Live web', link: '/' },
         ]} />
         <GridBackground>
-          <CustomHeading />
+          <CustomHeading 
+            heading='SARFAD'
+            description='CanSat tým'
+          />
         </GridBackground>
       </Box>
       <TextContent

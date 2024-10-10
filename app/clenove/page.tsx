@@ -1,8 +1,8 @@
 'use client'
-import Nav from '../../components/Navbar';
-import CustomHeading from '../../components/CustomHeading';
-import GridBackground from '../../components/GridBackground';
-import TextContent from '../../components/TextContent';
+import Nav from '@/components/Navbar';
+import CustomHeading from '@/components/CustomHeading';
+import GridBackground from '@/components/GridBackground';
+import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
 
 export default function Home() {
@@ -17,7 +17,9 @@ export default function Home() {
           { label: 'Live web', link: '/' },
         ]} />
         <GridBackground>
-          <CustomHeading />
+          <CustomHeading
+            heading='Členové týmu'
+          />
         </GridBackground>
       </Box>
     </>
