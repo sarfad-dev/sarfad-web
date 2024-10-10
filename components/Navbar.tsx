@@ -34,7 +34,7 @@ export default function WithSubnavigation() {
     const color = useColorModeValue('gray.600', 'white')
 
     return (
-        <Box position="absolute" top="-1" w="100%" zIndex={2} > {/* Ensures navbar is on top of the heading */}
+        <Box position="absolute" top="-1" w="100%" zIndex={1} >
             <Flex
                 bg={bg}
                 color={color}
