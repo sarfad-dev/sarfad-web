@@ -9,13 +9,7 @@ export default function Home() {
   return (
     <>
       <Box height="100vh" width="100vw">
-        <Nav navItems={[
-          { label: 'Domů', link: '/' },
-          { label: 'Co je to Cansat?', link: '/' },
-          { label: 'Co umí?', link: '/' },
-          { label: 'Členové', link: '/clenove' },
-          { label: 'Live web', link: '/' },
-        ]} />
+        <Nav/>
         <GridBackground>
           <CustomHeading 
             heading='SARFAD'

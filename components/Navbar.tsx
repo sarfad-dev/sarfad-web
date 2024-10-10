@@ -19,11 +19,15 @@ interface NavItem {
     link?: string
 }
 
-interface WithSubnavigationProps {
-    navItems: NavItem[]
-}
+const navItems: NavItem[] = [
+    { label: 'Domů', link: '/' },
+    { label: 'Co je to Cansat?', link: '/' },
+    { label: 'Co umí?', link: '/' },
+    { label: 'Členové', link: '/clenove' },
+    { label: 'Live web', link: '/' },
+]
 
-export default function WithSubnavigation({ navItems }: WithSubnavigationProps) {
+export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure()
 
     const bg = useColorModeValue('transparent', 'gray.800')
@@ -40,13 +44,13 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
                 align={'center'}
                 justify="space-between"
                 w="100%">
-                
+
                 {/* Hamburger menu for mobile */}
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
                     display={{ base: 'flex', md: 'none' }}
-                    >
+                >
                     <IconButton
                         onClick={onToggle}
                         icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
