@@ -12,8 +12,7 @@ export default function Members() {
         <Nav />
         <GridBackground>
           <CustomHeading
-            heading='SARFAD'
-            description='CanSat tým'
+            heading='Členové týmu'
           />
         </GridBackground>
       </Box>

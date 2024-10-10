@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     { label: 'Co je to Cansat?', link: '/' },
     { label: 'Co umí?', link: '/' },
     { label: 'Členové', link: '/clenove' },
-    { label: 'Live web', link: '/' },
+    { label: 'Live web', link: '/live-web' },
 ]
 
 export default function WithSubnavigation() {
