@@ -30,7 +30,7 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
     const color = useColorModeValue('gray.600', 'white')
 
     return (
-        <Box position="absolute" top="0" w="100%" zIndex={2}> {/* Ensures navbar is on top of the heading */}
+        <Box position="absolute" top="-1" w="100%" zIndex={2}> {/* Ensures navbar is on top of the heading */}
             <Flex
                 bg={bg}
                 color={color}
@@ -45,7 +45,8 @@ export default function WithSubnavigation({ navItems }: WithSubnavigationProps) 
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
-                    display={{ base: 'flex', md: 'none' }}>
+                    display={{ base: 'flex', md: 'none' }}
+                    >
                     <IconButton
                         onClick={onToggle}
                         icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
@@ -87,7 +88,7 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                         as="a"
                         px={4}
                         href={navItem.link ?? '#'}
-                        fontSize={'md'}
+                        fontSize="lg"
                         fontWeight={600}
                         color={linkColor}
                         _hover={{
@@ -107,7 +108,7 @@ interface MobileNavProps {
 }
 
 const MobileNav = ({ navItems }: MobileNavProps) => {
-    const bg = useColorModeValue('white', 'gray.800')
+    const bg = "transparent"
     const textColor = useColorModeValue('gray.600', 'gray.200')
 
     return (
