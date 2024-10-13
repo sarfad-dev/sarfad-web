@@ -3,6 +3,8 @@ import Nav from '@/components/Navbar';
 import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
+import Carousel from '@/components/Carousel';
+
 import { Box } from '@chakra-ui/react';
 
 export default function Home() {
@@ -27,6 +29,18 @@ export default function Home() {
         button={true}
         buttonText="Zjistit více"
       />
+      {/* <Carousel
+        heading='Co umí náš CanSat'
+        images={[
+          { src: '/carousel1.svg', heading: 'Primární mise', description: 'Měření teploty a tlaku'},
+          { src: '/carousel2.svg', heading: 'Pozemní stanice', description: 'Přijímání dat z CanSatu'},
+          { src: '/carousel3.svg', heading: 'Konstruckce', description: 'Vysoká odolnost'},
+          { src: '/carousel4.svg', heading: 'Konstrukce', description: 'Měření teploty a tlaku'},
+          { src: '/carousel4.svg', heading: 'Konstrukce', description: 'Měření teploty a tlaku'},
+          { src: '/carousel4.svg', heading: 'Konstrukce', description: 'Měření teploty a tlaku'},
+          { src: '/carousel4.svg', heading: 'Konstrukce', description: 'Měření teploty a tlaku'},
+        ]}
+      /> */}
       <TextContent
         heading="Sleduj naší misi živě!"
         description='Všechna data se během letu ukládají do databáze, 

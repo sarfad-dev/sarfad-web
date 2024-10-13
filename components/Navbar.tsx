@@ -62,10 +62,13 @@ export default function WithSubnavigation() {
                 {/* Desktop Nav Items */}
                 <Flex
                     flex={1}
-                    justify={'center'}
+                    justify="center"
+                    align="center"
+                    w="100%"
                     display={{ base: 'none', md: 'flex' }}>
                     <DesktopNav navItems={navItems} />
                 </Flex>
+
             </Flex>
 
             {/* Mobile Navigation */}
@@ -85,7 +88,7 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
     const linkHoverColor = useColorModeValue('gray.800', 'white')
 
     return (
-        <Stack direction={'row'} spacing={8}>
+        <Flex w="100%" justify="space-evenly"> {/* Spread links across the width */}
             {navItems.map((navItem) => (
                 <Box key={navItem.label}>
                     <Box
@@ -103,7 +106,7 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                     </Box>
                 </Box>
             ))}
-        </Stack>
+        </Flex>
     )
 }
 

@@ -22,6 +22,8 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 				maxWidth="100%"
 				height="auto"
 				borderRadius={10}
+				draggable="false"
+				userSelect="none"
 			/>
 
 			{/* Caption Overlay */}
@@ -41,7 +43,7 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 					borderRadius="10px"
 					padding="10px"
 				>
-					<Text textAlign="center">{caption}</Text>
+					<Text textAlign="center" draggable="false" userSelect="none">{caption}</Text>
 				</Box>
 			)}
 		</Box>

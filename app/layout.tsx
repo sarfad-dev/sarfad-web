@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={font.className + " overflow-x-hidden"}>
         <Providers>{children}</Providers>
       </body>
     </html>
