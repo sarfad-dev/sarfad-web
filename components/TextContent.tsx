@@ -3,7 +3,7 @@ import {
 	Text,
 	Grid,
 	GridItem,
-	Button
+	Button,
 } from '@chakra-ui/react';
 import ImageContent from './ImageContent';
 
@@ -18,42 +18,52 @@ interface TextContentProps {
 	buttonText: string;
 }
 
-const TextContent: React.FC<TextContentProps> = ({ heading, description, image, imageSrc, imageAlt, imageCaption, button, buttonText }) => {
+const TextContent: React.FC<TextContentProps> = ({
+	heading,
+	description,
+	image,
+	imageSrc,
+	imageAlt,
+	imageCaption,
+	button,
+	buttonText,
+}) => {
 	return (
-		<Box display="flex" alignItems="center" justifyContent="center" height="100%">
+		<Box display="flex" alignItems="center" justifyContent="center" height="100vh" width="100%">
 			<Grid
-				templateColumns={{ base: '1fr', md: image ? '1fr 1fr' : '1fr' }}
-				gap={6}
+				templateColumns={{ base: '1fr', sm: '2fr',md: '1.5fr 1fr' }}
+				gap={8}
 				alignItems="center"
 				justifyItems="center"
 				width="100%"
-				maxWidth="75vw"
+				maxWidth="90vw"
 			>
-				{/* Text Section */}
-				<GridItem>
+				<GridItem colSpan={1} width="80%">
 					<Box textAlign="left">
-						<Text fontSize="4xl" fontWeight="extrabold" mb={4}>
+						<Text fontSize={{ base: '4xl', md: '6xl' }} fontWeight="extrabold" mb={4}>
 							{heading}
 						</Text>
-						<Text fontSize="xl" mb={4}>
+						<Text fontSize={{ base: 'xl', md: '2xl' }} mb={4}>
 							{description}
 						</Text>
 						{button && (
-							<Button
-								bg='black'
-								color='white'
-								_hover={{ bg: '#301934' }}
-								borderRadius="md"
-							>
-								{buttonText}
-							</Button>
+							<Box display={{ base: 'flex', md: 'block' }} justifyContent="center">
+								<Button
+									bg='black'
+									color='white'
+									_hover={{ bg: '#301934' }}
+									borderRadius="md"
+									mt={4}
+								>
+									{buttonText}
+								</Button>
+							</Box>
 						)}
 					</Box>
 				</GridItem>
 
-				{/* Image Section */}
 				{image && (
-					<GridItem>
+					<GridItem colSpan={1} width="100%" display="flex" justifyContent="center">
 						<ImageContent src={imageSrc} alt={imageAlt} caption={imageCaption} />
 					</GridItem>
 				)}

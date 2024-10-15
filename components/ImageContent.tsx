@@ -33,15 +33,14 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 					top="50%"
 					left="50%"
 					transform="translate(-50%, -50%)"
-					width="300px"
-					height="600px"
+					width="30rem"
+					height="60rem"
 					backgroundColor="transparent"
 					color="black"
 					display="flex"
 					justifyContent="start"
 					alignItems="start"
 					borderRadius="10px"
-					padding="10px"
 				>
 					<Text textAlign="center" draggable="false" userSelect="none">{caption}</Text>
 				</Box>
