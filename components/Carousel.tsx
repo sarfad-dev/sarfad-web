@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 
 import React, { useRef, useEffect, useState } from 'react';
 import { Box, Heading, HStack } from "@chakra-ui/react";
@@ -113,3 +113,4 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images }) => {
 };
 
 export default Carousel;
+ */

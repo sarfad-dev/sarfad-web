@@ -3,8 +3,8 @@ import Nav from '@/components/Navbar';
 import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
-import Carousel from '@/components/Carousel';
-
+/* import Carousel from '@/components/Carousel';
+ */
 import { Box } from '@chakra-ui/react';
 
 export default function Home() {
