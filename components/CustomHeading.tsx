@@ -1,7 +1,8 @@
 import { 
   Box, 
   Heading, 
-  Text 
+  Text, 
+  useBreakpointValue 
 } from "@chakra-ui/react";
 import { desc } from "framer-motion/client";
 
@@ -11,6 +12,9 @@ interface CustomHeadingProps {
 }
 
 const CustomHeading: React.FC<CustomHeadingProps> = ({heading, description}) => {
+  const letterSpacing = useBreakpointValue({ base: 5, md: 10 });
+  const fontWeight = useBreakpointValue({ base: "bold", md: "semibold" });
+
   return (
     <Box 
       textAlign="center" 
@@ -22,8 +26,8 @@ const CustomHeading: React.FC<CustomHeadingProps> = ({heading, description}) => 
     >
       <Heading 
         fontSize={{ base: "5xl", md: "7xl", lg: "9xl" }} 
-        fontWeight="semibold" 
-		    letterSpacing={10}
+        fontWeight={fontWeight} 
+        letterSpacing={letterSpacing}
       >
         {heading}
       </Heading>
