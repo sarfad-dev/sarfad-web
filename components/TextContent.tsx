@@ -37,10 +37,10 @@ const TextContent: React.FC<TextContentProps> = ({
 	return (
 		<Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" width="100%" id={id}>
 			<Grid
-				templateColumns={{ base: '1fr', md: '1.2fr 1fr' }} // Adjust column width ratios
-				gap={{ base: 4, md: 8 }}  // Different gaps for mobile and desktop
+				templateColumns={{ base: '1fr', md: '1.2fr 1fr' }}
+				gap={{ base: 4, md: 8 }}
 				alignItems="center"
-				justifyItems={{ base: 'center', md: 'start' }}  // Center in mobile, align left in desktop
+				justifyItems={{ base: 'center', md: 'start' }}
 				width="100%"
 				maxWidth="90vw"
 			>
@@ -77,7 +77,6 @@ const TextContent: React.FC<TextContentProps> = ({
 				)}
 			</Grid>
 		</Box>
-
 	);
 };
 

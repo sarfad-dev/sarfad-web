@@ -9,18 +9,14 @@ import ScrollUpButton from '@/components/scrollUpButton';
 export default function Home() {
   return (
     <>
-        <GridBackground>
-        </GridBackground> 
-      {/* Header Section */}
+      <GridBackground />
       <Box minHeight="100vh" width="100vw">
         <Nav />
-          <CustomHeading
-            heading="SARFAD"
-            description="CanSat tým"
-          />
+        <CustomHeading
+          heading="SARFAD"
+          description="CanSat tým"
+        />
       </Box>
-
-      {/* First TextContent Section */}
       <Box minHeight="80vh" width="100%" pt={5}>
         <TextContent
           id='cansat'
@@ -33,10 +29,8 @@ export default function Home() {
           button={true}
           buttonText="Zjistit více"
           buttonLink="https://www.eserocz.cz/cansat"
-          />
+        />
       </Box>
-
-      {/* Second TextContent Section */}
       <Box minHeight="80vh" width="100%">
         <TextContent
           id='live-web'
@@ -51,7 +45,7 @@ export default function Home() {
           buttonText="Zobrazit web"
           buttonLink='/live-web'
         />
-      <ScrollUpButton />
+        <ScrollUpButton />
       </Box>
     </>
   );

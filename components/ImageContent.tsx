@@ -14,7 +14,6 @@ interface ImageContentProps {
 const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 	return (
 		<Box position="relative" display="inline-block" maxWidth="100%">
-			{/* Image Container */}
 			<Image
 				src={src}
 				alt={alt}
@@ -25,8 +24,6 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, caption }) => {
 				draggable="false"
 				userSelect="none"
 			/>
-
-			{/* Caption Overlay */}
 			{caption && (
 				<Box
 					position="absolute"

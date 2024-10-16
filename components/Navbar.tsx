@@ -45,7 +45,6 @@ export default function WithSubnavigation() {
                 justify="space-between"
                 w="100%">
 
-                {/* Hamburger menu for mobile */}
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
@@ -59,7 +58,6 @@ export default function WithSubnavigation() {
                     />
                 </Flex>
 
-                {/* Desktop Nav Items */}
                 <Flex
                     flex={1}
                     justify="center"
@@ -71,7 +69,6 @@ export default function WithSubnavigation() {
 
             </Flex>
 
-            {/* Mobile Navigation */}
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav navItems={navItems} />
             </Collapse>
@@ -88,7 +85,7 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
     const linkHoverColor = useColorModeValue('gray.800', 'white')
 
     return (
-        <Flex w="100%" justify="space-evenly"> {/* Spread links across the width */}
+        <Flex w="100%" justify="space-evenly">
             {navItems.map((navItem) => (
                 <Box key={navItem.label}>
                     <Box
