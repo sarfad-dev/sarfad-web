@@ -30,7 +30,7 @@ export default function Home() {
           imageAlt="Rocket"
           button={true}
           buttonText="Zjistit více"
-          buttonLink="/"
+          buttonLink="https://www.eserocz.cz/cansat"
           />
       </Box>
 
