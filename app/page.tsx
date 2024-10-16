@@ -22,6 +22,7 @@ export default function Home() {
       {/* First TextContent Section */}
       <Box minHeight="80vh" width="100%">
         <TextContent
+          id='cansat'
           heading="Co je to CanSat?"
           description="Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
           funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru."
@@ -37,6 +38,7 @@ export default function Home() {
       {/* Second TextContent Section */}
       <Box minHeight="80vh" width="100%">
         <TextContent
+          id='co-umi'
           heading="Sleduj naší misi živě!"
           description="Všechna data se během letu ukládají do databáze, odkud se poté zobrazují na našem webu v různých 
           vizualizacích s aktualizováním v reálném čase."

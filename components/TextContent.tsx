@@ -8,6 +8,7 @@ import {
 import ImageContent from './ImageContent';
 
 interface TextContentProps {
+	id?: string;
 	heading: string;
 	description: string;
 	image: boolean;
@@ -21,6 +22,7 @@ interface TextContentProps {
 }
 
 const TextContent: React.FC<TextContentProps> = ({
+	id,
 	heading,
 	description,
 	image,
@@ -33,7 +35,7 @@ const TextContent: React.FC<TextContentProps> = ({
 	buttonLink,
 }) => {
 	return (
-		<Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" width="100%">
+		<Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" width="100%" id={id}>
 			<Grid
 				templateColumns={{ base: '1fr', md: '1.2fr 1fr' }} // Adjust column width ratios
 				gap={{ base: 4, md: 8 }}  // Different gaps for mobile and desktop
