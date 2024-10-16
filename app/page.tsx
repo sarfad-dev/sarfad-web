@@ -39,7 +39,7 @@ export default function Home() {
       {/* Second TextContent Section */}
       <Box minHeight="80vh" width="100%">
         <TextContent
-          id='co-umi'
+          id='live-web'
           heading="Sleduj naší misi živě!"
           description="Všechna data se během letu ukládají do databáze, odkud se poté zobrazují na našem webu v různých 
           vizualizacích s aktualizováním v reálném čase."
