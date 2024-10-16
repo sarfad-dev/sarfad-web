@@ -13,6 +13,7 @@ export default function Members() {
         <GridBackground>
           <CustomHeading
             heading='Členové týmu'
+            description='WIP'
           />
         </GridBackground>
       </Box>

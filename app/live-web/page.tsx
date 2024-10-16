@@ -13,6 +13,7 @@ export default function LiveWeb() {
 				<GridBackground>
 					<CustomHeading
 						heading='Live web'
+						description='WIP'
 					/>
 				</GridBackground>
 			</Box>
