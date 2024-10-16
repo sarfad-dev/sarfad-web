@@ -4,6 +4,7 @@ import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
+import ScrollUpButton from '@/components/scrollUpButton';
 
 export default function Home() {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
           buttonText="Zobrazit web"
           buttonLink='/live-web'
         />
+      <ScrollUpButton />
       </Box>
     </>
   );
