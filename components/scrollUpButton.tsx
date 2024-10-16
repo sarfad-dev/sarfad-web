@@ -30,8 +30,8 @@ const ScrollUpButton: React.FC = () => {
 	return (
 		<Box
 			position="fixed"
-			bottom="20px"
-			right="20px"
+			bottom="1rem"
+			right="1rem"
 			zIndex="1000"
 			opacity={isVisible ? 1 : 0}
 			transition="opacity 0.5s ease-in-out"
