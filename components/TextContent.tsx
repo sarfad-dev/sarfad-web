@@ -29,9 +29,9 @@ const TextContent: React.FC<TextContentProps> = ({
 	buttonText,
 }) => {
 	return (
-		<Box display="flex" alignItems="center" justifyContent="center" height="100vh" width="100%">
+		<Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" width="100%">
 			<Grid
-				templateColumns={{ base: '1fr', sm: '2fr',md: '1.5fr 1fr' }}
+				templateColumns={{ base: '1fr', sm: '2fr', md: '1.5fr 1fr' }}
 				gap={8}
 				alignItems="center"
 				justifyItems="center"
@@ -49,8 +49,8 @@ const TextContent: React.FC<TextContentProps> = ({
 						{button && (
 							<Box display={{ base: 'flex', md: 'block' }} justifyContent="center">
 								<Button
-									bg='black'
-									color='white'
+									bg="black"
+									color="white"
 									_hover={{ bg: '#301934' }}
 									borderRadius="md"
 									mt={4}
@@ -69,6 +69,7 @@ const TextContent: React.FC<TextContentProps> = ({
 				)}
 			</Grid>
 		</Box>
+
 	);
 };
 
