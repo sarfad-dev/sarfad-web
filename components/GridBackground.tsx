@@ -2,11 +2,8 @@
 import { Box } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-interface GridBackgroundProps {
-	children: ReactNode;
-}
 
-const GridBackground = ({ children }: GridBackgroundProps) => {
+const GridBackground = () => {
 	return (
 		<Box
 			position="absolute"
@@ -16,13 +13,11 @@ const GridBackground = ({ children }: GridBackgroundProps) => {
 			height="100vh"
 			width="100vw"
 			backgroundColor="white"
-			backgroundImage="linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)"
-			backgroundSize="6rem 3rem"
+			backgroundImage="repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 40px), repeating-linear-gradient(#4c4c4c55, #4c4c4c)"
+			opacity={0.1}
 			overflow="hidden"
 		>
-			{children}
 		</Box>
-
 	);
 };
 

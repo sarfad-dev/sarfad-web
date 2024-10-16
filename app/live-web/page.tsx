@@ -8,14 +8,14 @@ import { Box } from '@chakra-ui/react';
 export default function LiveWeb() {
 	return (
 		<>
+			<GridBackground>
+			</GridBackground>
 			<Box height="100vh" width="100vw">
 				<Nav />
-				<GridBackground>
-					<CustomHeading
-						heading='Live web'
-						description='WIP'
-					/>
-				</GridBackground>
+				<CustomHeading
+					heading='Live web'
+					description='WIP'
+				/>
 			</Box>
 		</>
 	);

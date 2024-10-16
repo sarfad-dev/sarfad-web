@@ -8,14 +8,14 @@ import { Box } from '@chakra-ui/react';
 export default function Members() {
   return (
     <>
+      <GridBackground>
+      </GridBackground>
       <Box height="100vh" width="100vw">
         <Nav />
-        <GridBackground>
-          <CustomHeading
-            heading='Členové týmu'
-            description='WIP'
-          />
-        </GridBackground>
+        <CustomHeading
+          heading='Členové týmu'
+          description='WIP'
+        />
       </Box>
     </>
   );

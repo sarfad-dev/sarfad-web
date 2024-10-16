@@ -8,15 +8,15 @@ import { Box } from '@chakra-ui/react';
 export default function Home() {
   return (
     <>
+        <GridBackground>
+        </GridBackground> 
       {/* Header Section */}
       <Box minHeight="100vh" width="100vw">
         <Nav />
-        <GridBackground>
           <CustomHeading
             heading="SARFAD"
             description="CanSat tým"
           />
-        </GridBackground> 
       </Box>
 
       {/* First TextContent Section */}
