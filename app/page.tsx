@@ -21,7 +21,7 @@ export default function Home() {
       </Box>
 
       {/* First TextContent Section */}
-      <Box minHeight="80vh" width="100%">
+      <Box minHeight="80vh" width="100%" pt={5}>
         <TextContent
           id='cansat'
           heading="Co je to CanSat?"
