@@ -46,6 +46,7 @@ export default function Home() {
           imageAlt="Rocket"
           button={true}
           buttonText="Zobrazit web"
+          buttonLink='/live-web'
         />
       </Box>
     </>
