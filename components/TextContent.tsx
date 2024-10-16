@@ -71,7 +71,7 @@ const TextContent: React.FC<TextContentProps> = ({
 				</GridItem>
 
 				{image && (
-					<GridItem colSpan={1} width={{ base: '90%', md: '100%' }} display="flex" justifyContent="center">
+					<GridItem colSpan={1} width={{ base: '90%', md: '100%' }} display="flex" justifyContent="center" pt={10}>
 						<ImageContent src={imageSrc} alt={imageAlt} caption={imageCaption} />
 					</GridItem>
 				)}
