@@ -86,7 +86,7 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 				</Button>
 			)}
 
-			{isFaded && overlayText && (
+			{overlayText && (
 				<Box
 					position="absolute"
 					top="50%"
@@ -97,6 +97,8 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					px={4}
 					zIndex={2}
 					width="80%"
+					opacity={isFaded ? 1 : 0}
+					transition="opacity 1s ease-in-out"
 				>
 					<Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" whiteSpace="pre-wrap">
 						{overlayText}
