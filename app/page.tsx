@@ -40,22 +40,35 @@ export default function Home() {
             {
               src: '/carousel1.svg',
               alt: 'Image 1',
+              captionHeading: 'Primární mise',
+              captionDescription: 'Měření teploty a tlaku',
+              button: true,
             },
             {
               src: '/carousel2.svg',
               alt: 'Image 2',
+              captionHeading: 'Pozemní stanice',
+              captionDescription: 'Přijímání dat z CanSatu',
+              button: true,
             },
             {
               src: '/carousel3.svg',
               alt: 'Image 3',
+              captionHeading: 'Konstrukce',
+              captionDescription: 'Vysoká odolnost',
+              lightBg: true,
+              button: true,
             },
             {
               src: '/carousel4.svg',
               alt: 'Image 4',
+              captionHeading: '',
+              captionDescription: '',
+              lightBg: true,
+              button: true
             },
           ]}
         >
-
         </Carousel>
       </Box>
       <Box minHeight="80vh" width="100%">

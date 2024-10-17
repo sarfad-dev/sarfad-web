@@ -12,6 +12,8 @@ interface Image {
 	alt: string;
 	captionHeading?: string;
 	captionDescription?: string;
+	lightBg?: boolean;
+	button?: boolean;
 }
 
 interface CarouselProps {
@@ -38,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
 				>
 					{images.map((image, index) => (
 						<GridItem key={index} display="flex" justifyContent="center">
-							<ImageContent src={image.src} alt={image.alt} />
+							<ImageContent src={image.src} alt={image.alt} captionHeading={image.captionHeading} captionDescription={image.captionDescription} lightBg={image.lightBg} button={image.button}/>
 						</GridItem>
 					))}
 				</Grid>
