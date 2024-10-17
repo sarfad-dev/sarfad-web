@@ -6,7 +6,7 @@ import { Providers } from './providers'
 const font = localFont({ src: '../public/fonts/SF-Pro.ttf' });
 
 export const metadata: Metadata = {
-  title: "SARFAD | Home",
+  title: "SARFAD",
   description: "Czech CanSat team",
 };
 
