@@ -22,7 +22,7 @@ interface NavItem {
 const navItems: NavItem[] = [
     { label: 'Domů', link: '/' },
     { label: 'Co je to Cansat?', link: '#cansat' },
-    { label: 'Co umí?', link: '/' },
+    { label: 'Co umí?', link: '#co-umi' },
     { label: 'Členové', link: '/clenove' },
     { label: 'Live web', link: '#live-web' },
 ]
