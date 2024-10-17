@@ -43,6 +43,7 @@ export default function Home() {
               captionHeading: 'Primární mise',
               captionDescription: 'Měření teploty a tlaku',
               button: true,
+              overlayText: 'Měření teploty a tlaku pomocí senzoru BME280 od společnosti BOSCH'
             },
             {
               src: '/carousel2.svg',

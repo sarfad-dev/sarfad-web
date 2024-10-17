@@ -1,11 +1,7 @@
 'use client';
 
-import {
-	Box,
-	Image,
-	Text,
-	Button
-} from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Box, Image, Text, Button } from '@chakra-ui/react';
 
 interface ImageContentProps {
 	src: string;
@@ -14,11 +10,31 @@ interface ImageContentProps {
 	captionDescription?: string;
 	button?: boolean;
 	lightBg?: boolean;
+	overlayText?: string;
 }
 
-const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, captionDescription, button, lightBg }) => {
+const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, captionDescription, button, lightBg, overlayText }) => {
+	const [isFaded, setIsFaded] = useState(false);
+
+	const handleButtonClick = () => {
+		setIsFaded(prevState => !prevState);
+	};
+
 	return (
 		<Box position="relative" display="inline-block" maxWidth="100%">
+			<Box
+				position="absolute"
+				top={0}
+				left={0}
+				right={0}
+				bottom={0}
+				bg="#f7f7f7"
+				borderRadius={10}
+				opacity={isFaded ? 1 : 0}
+				transition="opacity 1s ease-in-out"
+				zIndex={1}
+				pointerEvents={isFaded ? "auto" : "none"}
+			/>
 			<Image
 				src={src}
 				alt={alt}
@@ -28,7 +44,11 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 				borderRadius={10}
 				draggable="false"
 				userSelect="none"
+				opacity={isFaded ? 0 : 1}
+				transition="opacity 1s ease-in-out"
+				zIndex={0}
 			/>
+
 			{(captionHeading || captionDescription) && (
 				<Box
 					position="absolute"
@@ -49,6 +69,7 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					)}
 				</Box>
 			)}
+
 			{button && (
 				<Button
 					position="absolute"
@@ -58,9 +79,29 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					bg="black"
 					color="white"
 					_hover={{ bg: "#301934" }}
+					onClick={handleButtonClick}
+					zIndex={2}
 				>
-					+
+					{isFaded ? "-" : "+"}
 				</Button>
+			)}
+
+			{isFaded && overlayText && (
+				<Box
+					position="absolute"
+					top="50%"
+					left="50%"
+					transform="translate(-50%, -50%)"
+					color="black"
+					textAlign="center"
+					px={4}
+					zIndex={2}
+					width="80%"
+				>
+					<Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" whiteSpace="pre-wrap">
+						{overlayText}
+					</Text>
+				</Box>
 			)}
 		</Box>
 	);
