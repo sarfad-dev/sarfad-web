@@ -5,6 +5,7 @@ import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
 import ScrollUpButton from '@/components/scrollUpButton';
+import Carousel from '@/components/Carousel';
 
 export default function Home() {
   return (
@@ -30,6 +31,32 @@ export default function Home() {
           buttonText="Zjistit více"
           buttonLink="https://www.eserocz.cz/cansat"
         />
+      </Box>
+      <Box minHeight="80vh" width="100%">
+        <Carousel
+          id='co-umi'
+          heading='Co umí náš CanSat?'
+          images={[
+            {
+              src: '/carousel1.svg',
+              alt: 'Image 1',
+            },
+            {
+              src: '/carousel2.svg',
+              alt: 'Image 2',
+            },
+            {
+              src: '/carousel3.svg',
+              alt: 'Image 3',
+            },
+            {
+              src: '/carousel4.svg',
+              alt: 'Image 4',
+            },
+          ]}
+        >
+
+        </Carousel>
       </Box>
       <Box minHeight="80vh" width="100%">
         <TextContent
