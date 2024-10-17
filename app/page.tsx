@@ -5,6 +5,7 @@ import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
 import ScrollUpButton from '@/components/scrollUpButton';
+import Carousel from '@/components/Carousel';
 
 export default function Home() {
   return (
@@ -30,6 +31,46 @@ export default function Home() {
           buttonText="Zjistit více"
           buttonLink="https://www.eserocz.cz/cansat"
         />
+      </Box>
+      <Box minHeight="80vh" width="100%" pt={10}>
+        <Carousel
+          id='co-umi'
+          heading='Co umí náš CanSat?'
+          images={[
+            {
+              src: '/carousel1.svg',
+              alt: 'Image 1',
+              captionHeading: 'Primární mise',
+              captionDescription: 'Měření teploty a tlaku',
+              button: true,
+              overlayText: 'Měření teploty a tlaku pomocí senzoru BME280 od společnosti BOSCH'
+            },
+            {
+              src: '/carousel2.svg',
+              alt: 'Image 2',
+              captionHeading: 'Pozemní stanice',
+              captionDescription: 'Přijímání dat z CanSatu',
+              button: true,
+            },
+            {
+              src: '/carousel3.svg',
+              alt: 'Image 3',
+              captionHeading: 'Konstrukce',
+              captionDescription: 'Vysoká odolnost',
+              lightBg: true,
+              button: true,
+            },
+            {
+              src: '/carousel4.svg',
+              alt: 'Image 4',
+              captionHeading: '',
+              captionDescription: '',
+              lightBg: true,
+              button: true
+            },
+          ]}
+        >
+        </Carousel>
       </Box>
       <Box minHeight="80vh" width="100%">
         <TextContent
