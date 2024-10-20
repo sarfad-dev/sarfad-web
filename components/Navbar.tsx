@@ -81,8 +81,8 @@ interface DesktopNavProps {
 }
 
 const DesktopNav = ({ navItems }: DesktopNavProps) => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200')
-    const linkHoverColor = useColorModeValue('gray.800', 'white')
+    const linkColor = useColorModeValue('black', 'black')
+    const linkHoverColor = useColorModeValue('gray.600', 'white')
 
     return (
         <Flex w="100%" justify="space-evenly">
@@ -92,8 +92,8 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                         as="a"
                         px={4}
                         href={navItem.link ?? '#'}
-                        fontSize="lg"
-                        fontWeight={600}
+                        fontSize="xl"
+                        fontWeight={300}
                         color={linkColor}
                         _hover={{
                             textDecoration: 'none',
