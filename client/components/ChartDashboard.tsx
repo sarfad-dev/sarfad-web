@@ -19,8 +19,14 @@ ChartJS.register(
 	Legend
   );
 
-const ChartDashboard = ({ type, label, color = "rgb(75, 192, 192)" }) => {
-  const [dataPoints, setDataPoints] = useState([]);
+interface ChartDashboardProps {
+  type: string;
+  label: string;
+  color?: string;
+}
+
+const ChartDashboard = ({ type, label, color = "rgb(75, 192, 192)" }: ChartDashboardProps) => {
+  const [dataPoints, setDataPoints] = useState<{ time: string; value: any }[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {

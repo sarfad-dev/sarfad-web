@@ -5,10 +5,10 @@ from influxdb_client import InfluxDBClient, Point
 import os
 
 # Load env vars
-INFLUXDB_URL = os.getenv("INFLUXDB_URL", "http://127.0.0.1:8086")
+INFLUXDB_URL = os.getenv("INFLUXDB_URL")
 INFLUXDB_TOKEN = os.getenv("INFLUXDB_TOKEN")
-INFLUXDB_ORG = os.getenv("INFLUXDB_ORG", "your-org-id")
-INFLUXDB_BUCKET = os.getenv("INFLUXDB_BUCKET", "mock")
+INFLUXDB_ORG = os.getenv("INFLUXDB_ORG")
+INFLUXDB_BUCKET = os.getenv("INFLUXDB_BUCKET")
 
 # Connect to InfluxDB
 client = InfluxDBClient(url=INFLUXDB_URL, token=INFLUXDB_TOKEN)

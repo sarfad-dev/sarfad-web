@@ -1,9 +1,8 @@
 'use client'
 import Nav from '@/components/Navbar';
-import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
-import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
+import ChartDashboard from '@/components/ChartDashboard';
 
 export default function LiveWeb() {
 	return (
@@ -12,10 +11,18 @@ export default function LiveWeb() {
 			</GridBackground>
 			<Box height="100vh" width="100vw">
 				<Nav />
-				<CustomHeading
-					heading='Live web'
-					description='WIP'
-				/>
+				<div className="chart-row">
+				<ChartDashboard type="temperature" label="Temperature (°C)" color="tomato" />
+				<ChartDashboard type="humidity" label="Humidity (%)" color="royalblue" />
+			</div>
+			<div className="chart-row">
+				<ChartDashboard type="uvIndex" label="UV Index" color="orange" />
+				<ChartDashboard type="uvIndex" label="UV Index" color="purple" />
+			</div>
+			<div className="chart-row">
+				<ChartDashboard type="oxygen" label="Oxygen" color="green" />
+				<ChartDashboard type="carbonDioxide" label="Carbon Dioxide" color="pink" />
+			</div>
 			</Box>
 		</>
 	);
