@@ -30,7 +30,7 @@ const ChartDashboard = ({ type, label, color = "rgb(75, 192, 192)" }: ChartDashb
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("http://localhost:5000/sensor-data/latest")
+      fetch("/sensor-data/latest")
         .then((res) => {
           if (!res.ok) throw new Error("Failed to fetch");
           return res.json();
