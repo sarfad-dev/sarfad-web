@@ -27,7 +27,13 @@
 	# Copy built frontend
 	COPY --from=builder /app/client /app/client
 	
+	# Copy startup script
+	COPY start.sh /app/start.sh
+	RUN chmod +x /app/start.sh
+	
+	# Expose ports
 	EXPOSE 3000 5000
 	
-	CMD ["bash", "-c", "cd /app/client && npm run start & cd /app/server && python3 app.py"]
+	# Start the application
+	CMD ["/app/start.sh"]
 	
