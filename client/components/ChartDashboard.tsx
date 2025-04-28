@@ -72,7 +72,7 @@ const ChartDashboard = ({ type, label, color = "rgb(75, 192, 192)" }: ChartDashb
     plugins: {
       legend: {
         labels: {
-          color: "#e0e0e0", // Legend text color
+          color: "rgba(255,255,255,0.05)", // Legend text color
         },
       },
     },
