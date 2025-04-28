@@ -22,22 +22,14 @@ export const metadata: Metadata = {
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
     url: "https://sarfad.eu/",
     siteName: "SARFAD",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "SARFAD CanSat tým",
-      },
-    ],
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
-    images: ["/twitter-image.png"],
   },
+  
   other: {
     "google-site-verification": "L_rm2Iee41KoIsGrtC23qnMpB-_ETGI3WVZkzx3428w",
     "publisher": "Střední průmyslová škola Frýdek-Místek",
