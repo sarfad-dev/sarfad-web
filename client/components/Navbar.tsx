@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
     { label: 'Domů', link: '/' },
     { label: 'Co je to Cansat?', link: '#cansat' },
     { label: 'Co umí?', link: '#co-umi' },
-    { label: 'Kdo jsme?', link: '/clenove' },
+    { label: 'Kdo jsme?', link: '#team' },
     { label: 'Live web', link: '#live-web' },
 ]
 
