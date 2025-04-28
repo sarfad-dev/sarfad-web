@@ -1,27 +1,30 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Providers } from './providers'
+import { Providers } from './providers';
 
 const font = localFont({ src: '../public/fonts/SF-Pro.ttf' });
 
 export const metadata: Metadata = {
-  title: "SARFAD 2025 | POJFM CanSat tým",
+  title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
   description: "Cansat tým studentů Střední průmyslové školy ve Frýdku-Místku (POJ-FM) pro rok 2025, zvaný SARFAD.",
   keywords: [
-    "SARFAD", "Satelit", "CanSat", "CanSat 2022", "CanSat 2023", "CanSat 2024", "Cansat 2025",
+    "SARFAD", "Satelit", "CanSat", "CanSat 2022", "CanSat 2023", "CanSat 2024", "CanSat 2025",
     "POJFM", "Frýdek-Místek", "Vesmír", "Tenký klient", "Bigos", "CanSat CZ", "CanSat Česko"
   ],
-  authors: [{name: "Daniel Tomis"}, { name: "Prokop Havlík" }, { name: "Jakub Holub" }],
+  authors: [{ name: "Daniel Tomis" }, { name: "Prokop Havlík" }, { name: "Jakub Holub" }],
   metadataBase: new URL('https://sarfad.eu'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "SARFAD 2025 | POJFM CanSat tým",
+    title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
     url: "https://sarfad.eu/",
     siteName: "SARFAD",
     images: [
       {
-        url: "/og-image.png", // should be available in /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "SARFAD CanSat tým",
@@ -31,12 +34,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SARFAD 2025 | POJFM CanSat tým",
+    title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
-    images: ["/twitter-image.png"], // ideally same as OpenGraph or customized
+    images: ["/twitter-image.png"],
   },
   other: {
     "google-site-verification": "L_rm2Iee41KoIsGrtC23qnMpB-_ETGI3WVZkzx3428w",
+    "publisher": "Střední průmyslová škola Frýdek-Místek",
   }
 };
 
@@ -46,7 +50,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="cs">
+      <head>
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://sarfad.eu/" />
+
+        {/* Robots Meta Tag */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Publisher Metadata (optional extra for SEO) */}
+        <meta name="publisher" content="Střední průmyslová škola Frýdek-Místek" />
+      </head>
       <body className={font.className + " overflow-x-hidden"}>
         <Providers>{children}</Providers>
       </body>
