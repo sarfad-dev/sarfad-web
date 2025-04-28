@@ -6,7 +6,7 @@ import { Providers } from './providers';
 const font = localFont({ src: '../public/fonts/SF-Pro.ttf' });
 
 export const metadata: Metadata = {
-  title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
+  title: "SARFAD 2025",
   description: "Cansat tým studentů Střední průmyslové školy ve Frýdku-Místku (POJ-FM) pro rok 2025, zvaný SARFAD.",
   keywords: [
     "SARFAD", "Satelit", "CanSat", "CanSat 2022", "CanSat 2023", "CanSat 2024", "CanSat 2025",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
+    title: "SARFAD 2025",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
     url: "https://sarfad.eu/",
     siteName: "SARFAD",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "SARFAD 2025 – CanSat tým SPŠ Frýdek-Místek",
+    title: "SARFAD 2025",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
   },
   
