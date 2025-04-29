@@ -1,7 +1,7 @@
 import { Box, IconButton, Text, Flex, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useRef } from 'react';
 import ImageContent from './ImageContent';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface Image {
   src: string;
@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement>(null);
 
-  const visibleItems = useBreakpointValue({ base: 1, sm: 2, md: 4, lg: 5 }) || 4;
+  const visibleItems = useBreakpointValue({ base: 1, sm: 2, md: 3, lg: 4 }) || 4;
   const itemWidth = `${100 / visibleItems}%`;
 
   const scroll = (direction: 'left' | 'right') => {
@@ -55,13 +55,13 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
         <Flex display={{ base: 'none', md: 'flex' }} align="center" position="relative" mt={6}>
           <IconButton
             aria-label="Scroll Left"
-            icon={<ChevronLeftIcon />}
+            icon={<FaArrowLeft />}
             onClick={() => scroll('left')}
             position="absolute"
-            left="-3.5rem"
+            left="-3rem"
             zIndex={2}
             borderRadius="full"
-            size="lg"
+            size="md"
             bg="black"
             color="white"
             variant="solid"
@@ -104,13 +104,13 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
 
           <IconButton
             aria-label="Scroll Right"
-            icon={<ChevronRightIcon />}
+            icon={<FaArrowRight />}
             onClick={() => scroll('right')}
             position="absolute"
-            right="-3.5rem"
+            right="-3rem"
             zIndex={2}
             borderRadius="full"
-            size="lg"
+            size="md"
             bg="black"
             color="white"
             variant="solid"
