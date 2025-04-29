@@ -13,38 +13,46 @@ import {
     HamburgerIcon,
     CloseIcon,
 } from '@chakra-ui/icons'
+import { usePathname } from 'next/navigation'
 
 interface NavItem {
     label: string
     link?: string
 }
 
-const navItems: NavItem[] = [
-    { label: 'Domů', link: '/' },
-    { label: 'Co je to Cansat?', link: '#cansat' },
-    { label: 'Co umí?', link: '#co-umi' },
-    { label: 'Kdo jsme?', link: '#team' },
-    { label: 'Live web', link: '#live-web' },
-]
+const WithSubnavigation = () => {
+    const { isOpen, onToggle, onClose } = useDisclosure()
+    const pathname = usePathname()
+    const isHome = pathname === '/'
 
-export default function WithSubnavigation() {
-    const { isOpen, onToggle } = useDisclosure()
-
-    const bg = useColorModeValue('transparent', 'gray.800')
-    const color = useColorModeValue('gray.600', 'white')
+    const navItems: NavItem[] = isHome
+        ? [
+            { label: 'Domů', link: '/' },
+            { label: 'Co je to Cansat?', link: '#cansat' },
+            { label: 'Co umí?', link: '#co-umi' },
+            { label: 'Kdo jsme?', link: '#team' },
+            { label: 'Live web', link: '#live-web' },
+        ]
+        : [{ label: 'Domů', link: '/' }]
 
     return (
-        <Box position="absolute" top="-1" w="100%" zIndex={1} >
+        <Box
+            position="sticky"
+            top="-1"
+            w="100%"
+            zIndex={1}
+            bg="rgba(255, 255, 255, 0.5)"
+            backdropFilter="blur(1rem)"
+        >
             <Flex
-                bg={bg}
-                color={color}
+                color={useColorModeValue('gray.600', 'white')}
                 minH={'60px'}
                 py={{ base: 4 }}
                 px={{ base: 4 }}
                 align={'center'}
                 justify="space-between"
-                w="100%">
-
+                w="100%"
+            >
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
@@ -63,18 +71,20 @@ export default function WithSubnavigation() {
                     justify="center"
                     align="center"
                     w="100%"
-                    display={{ base: 'none', md: 'flex' }}>
+                    display={{ base: 'none', md: 'flex' }}
+                >
                     <DesktopNav navItems={navItems} />
                 </Flex>
-
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>
-                <MobileNav navItems={navItems} />
+                <MobileNav navItems={navItems} onLinkClick={onClose} />
             </Collapse>
         </Box>
     )
 }
+
+export default WithSubnavigation
 
 interface DesktopNavProps {
     navItems: NavItem[]
@@ -98,7 +108,8 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
                         _hover={{
                             textDecoration: 'none',
                             color: linkHoverColor,
-                        }}>
+                        }}
+                    >
                         {navItem.label}
                     </Box>
                 </Box>
@@ -109,16 +120,30 @@ const DesktopNav = ({ navItems }: DesktopNavProps) => {
 
 interface MobileNavProps {
     navItems: NavItem[]
+    onLinkClick: () => void
 }
 
-const MobileNav = ({ navItems }: MobileNavProps) => {
-    const bg = "transparent"
+const MobileNav = ({ navItems, onLinkClick }: MobileNavProps) => {
     const textColor = useColorModeValue('gray.600', 'gray.200')
+    const bg = useColorModeValue('gray.100', 'gray.700')
 
     return (
-        <Stack bg={bg} p={4} display={{ md: 'none' }}>
+        <Stack bg="transparent" p={4} display={{ md: 'none' }}>
             {navItems.map((navItem) => (
-                <Box py={2} as="a" href={navItem.link ?? '#'} key={navItem.label}>
+                <Box 
+                    as="a" 
+                    href={navItem.link ?? '#'} 
+                    key={navItem.label} 
+                    onClick={onLinkClick}
+                    display="block" 
+                    p={2} 
+                    mb={2}
+                    borderRadius="md"
+                    _hover={{
+                        bg: bg,
+                        textDecoration: 'none',
+                    }}
+                >
                     <Box fontWeight={600} color={textColor}>
                         {navItem.label}
                     </Box>
