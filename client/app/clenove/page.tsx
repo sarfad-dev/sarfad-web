@@ -32,6 +32,7 @@ export default function Members() {
             src: '/jakub.webp',
             alt: 'Jakub Holub',
             captionHeading: 'Jakub Holub',
+            lightBg: true,
             captionDescription: 'Manažer týmu',
             button: true,
             overlayText: ''
