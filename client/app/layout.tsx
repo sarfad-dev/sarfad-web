@@ -3,7 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from './providers';
 
-const font = localFont({ src: '../public/fonts/SF-Pro.ttf' });
+const font = localFont({
+  src: '../public/fonts/SF-Pro.woff2',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "SARFAD 2025",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     title: "SARFAD 2025",
     description: "Cansat tým studentů SPŠ ve Frýdku-Místku pro rok 2025, zvaný SARFAD.",
   },
-  
+
   other: {
     "google-site-verification": "L_rm2Iee41KoIsGrtC23qnMpB-_ETGI3WVZkzx3428w",
     "publisher": "Střední průmyslová škola Frýdek-Místek",
