@@ -41,8 +41,6 @@ const WithSubnavigation = () => {
             top="-1"
             w="100%"
             zIndex={1}
-            bg="rgba(255, 255, 255, 0.5)"
-            backdropFilter="blur(1rem)"
         >
             <Flex
                 color={useColorModeValue('gray.600', 'white')}

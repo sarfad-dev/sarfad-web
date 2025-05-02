@@ -11,19 +11,15 @@ const GridBackground = () => {
 			height="100vh"
 			width="100vw"
 			backgroundColor="white"
-			backgroundImage="repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 40px), repeating-linear-gradient(#4c4c4c55, #4c4c4c)"
+			backgroundImage="linear-gradient(#111111 1px, transparent 1px), linear-gradient(to right, #111111 1px, transparent 1px)"
+			backgroundSize="5rem 3rem"
 			opacity={0.1}
 			overflow="hidden"
-		>
-			<Box
-				position="absolute"
-				bottom="0"
-				left="0"
-				width="100%"
-				height="3rem"
-				bgGradient="linear(to-b, transparent, white)"
-			/>
-		</Box>
+			sx={{
+				WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 20%)',
+				maskImage: 'linear-gradient(to top, transparent 0%, black 20%)',
+			}}
+		/>
 	);
 };
 
