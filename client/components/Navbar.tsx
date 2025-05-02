@@ -37,7 +37,7 @@ const WithSubnavigation = () => {
 
     return (
         <Box
-            position="sticky"
+            position="absolute"
             top="-1"
             w="100%"
             zIndex={1}
