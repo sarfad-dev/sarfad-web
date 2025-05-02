@@ -102,6 +102,39 @@ export default function Home() {
         />
         <ScrollUpButton />
       </Box>
+      <Box minHeight="80vh" width="100%">
+        <Carousel
+          id='sponsors'
+          heading='Naši sponzoři'
+          images={[
+            {
+              src: '/pojfm.webp',
+              alt: 'Poj-FM',
+              button: true,
+              overlayText: 'Střední průmyslová škola ve Frýdku-Místku',
+            },
+            {
+              src: '/laskakit.webp',
+              alt: 'laskakit',
+              button: true,
+              overlayText: '',
+            },
+            {
+              src: 'pojspace.webp',
+              alt: 'PojSpace',
+              button: true,
+              overlayText: '',
+            },
+            {
+              src: 'velux.webp',
+              alt: 'Velux',
+              button: true,
+              overlayText: '',
+            }
+          ]}
+          >
+        </Carousel>
+      </Box>
     </>
   );
 }
