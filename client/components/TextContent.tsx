@@ -17,6 +17,7 @@ interface TextContentProps {
 	imageAlt: string;
 	imageCaptionHeading?: string;
 	imageCaptionDescription?: string;
+	isLCP?: boolean;
 	button: boolean;
 	buttonText: string;
 	buttonLink?: string;
@@ -32,6 +33,7 @@ const TextContent: React.FC<TextContentProps> = ({
 	imageAlt,
 	imageCaptionHeading,
 	imageCaptionDescription,
+	isLCP,
 	button,
 	buttonText,
 	buttonLink,
@@ -74,7 +76,7 @@ const TextContent: React.FC<TextContentProps> = ({
 
 				{image && (
 					<GridItem colSpan={1} width={{ base: '90%', md: '100%' }} display="flex" justifyContent="center" pt={10}>
-						<ImageContent src={imageSrc} alt={imageAlt} captionHeading={imageCaptionHeading} captionDescription={imageCaptionDescription} />
+						<ImageContent src={imageSrc} alt={imageAlt} captionHeading={imageCaptionHeading} captionDescription={imageCaptionDescription} isLCP={isLCP}/>
 					</GridItem>
 				)}
 			</Grid>

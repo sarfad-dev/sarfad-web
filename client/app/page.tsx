@@ -27,6 +27,7 @@ export default function Home() {
           image={true}
           imageSrc="/cansat.svg"
           imageAlt="Rocket"
+          isLCP={true}
           button={true}
           buttonText="Zjistit více"
           buttonLink="https://www.eserocz.cz/cansat"
@@ -79,7 +80,7 @@ export default function Home() {
           description="Jsme tým studentů Střední průmyslové školy ve Frýdku-Místku (POJ-FM) pro rok 2025, zvaný SARFAD. 
           Naším cílem je vytvořit funkční CanSat, který splní všechny požadavky soutěže."
           image={true}
-          imageSrc="/team.webp"
+          imageSrc="/cansat.svg"
           imageAlt="Tým"
           button={true}
           buttonText="Zobrazit členy týmu"

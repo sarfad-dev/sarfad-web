@@ -11,6 +11,7 @@ interface Image {
   lightBg?: boolean;
   button?: boolean;
   overlayText?: string;
+  isLCP?: boolean;
 }
 
 interface CarouselProps {

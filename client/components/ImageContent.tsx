@@ -11,9 +11,10 @@ interface ImageContentProps {
 	button?: boolean;
 	lightBg?: boolean;
 	overlayText?: string;
+	isLCP?: boolean;
 }
 
-const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, captionDescription, button, lightBg, overlayText }) => {
+const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, captionDescription, button, lightBg, overlayText, isLCP }) => {
 	const [isFaded, setIsFaded] = useState(false);
 
 	const handleButtonClick = () => {
@@ -47,6 +48,7 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 				opacity={isFaded ? 0 : 1}
 				transition="opacity 1s ease-in-out"
 				zIndex={0}
+				loading={isLCP ? "eager" : "lazy"}
 			/>
 
 			{(captionHeading || captionDescription) && (
