@@ -1,7 +1,5 @@
 'use client';
 import { Box } from '@chakra-ui/react';
-import { ReactNode } from 'react';
-
 
 const GridBackground = () => {
 	return (
@@ -17,6 +15,14 @@ const GridBackground = () => {
 			opacity={0.1}
 			overflow="hidden"
 		>
+			<Box
+				position="absolute"
+				bottom="0"
+				left="0"
+				width="100%"
+				height="3rem"
+				bgGradient="linear(to-b, transparent, white)"
+			/>
 		</Box>
 	);
 };
