@@ -58,7 +58,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
             icon={<FaArrowLeft />}
             onClick={() => scroll('left')}
             position="absolute"
-            left="-3rem"
+            left={{base: "-2rem", "2xl": "-3rem"}}
             zIndex={2}
             borderRadius="full"
             size="md"
@@ -107,7 +107,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
             icon={<FaArrowRight />}
             onClick={() => scroll('right')}
             position="absolute"
-            right="-3rem"
+            right={{base: "-2rem", "2xl": "-3rem"}}
             zIndex={2}
             borderRadius="full"
             size="md"
