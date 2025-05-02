@@ -30,7 +30,7 @@ const WithSubnavigation = () => {
             { label: 'Domů', link: '/' },
             { label: 'Co je to Cansat?', link: '#cansat' },
             { label: 'Co umí?', link: '#co-umi' },
-            { label: 'Kdo jsme?', link: '#team' },
+            { label: 'Kdo jsme?', link: '#kdo-jsme' },
             { label: 'Live web', link: '#live-web' },
         ]
         : [{ label: 'Domů', link: '/' }]
