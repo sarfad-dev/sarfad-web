@@ -4,7 +4,7 @@ import "./globals.css";
 import { Providers } from './providers';
 
 const font = localFont({
-  src: '../public/fonts/SF-Pro.woff2',
+  src: '../public/fonts/SF-Pro.ttf',
   display: 'swap',
 });
 
