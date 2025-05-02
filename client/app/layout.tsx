@@ -47,14 +47,17 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <head>
-        {/* Canonical URL */}
         <link rel="canonical" href="https://sarfad.eu/" />
-
-        {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />
-
-        {/* Publisher Metadata (optional extra for SEO) */}
         <meta name="publisher" content="Střední průmyslová škola Frýdek-Místek" />
+
+        <link
+          rel="preload"
+          href="/fonts/SF-Pro.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={font.className + " overflow-x-hidden"}>
         <Providers>{children}</Providers>
