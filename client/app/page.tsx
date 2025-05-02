@@ -32,9 +32,9 @@ export default function Home() {
           buttonLink="https://www.eserocz.cz/cansat"
         />
       </Box>
-      <Box id='co-umi' minHeight="80vh" width="100%" pt={10}>
+      <Box minHeight="80vh" width="100%" pt={10}>
         <Carousel
-          id='carousel'
+          id='co-umi'
           heading='Co umí náš CanSat?'
           images={[
             {
