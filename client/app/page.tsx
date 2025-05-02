@@ -39,7 +39,7 @@ export default function Home() {
           heading='Co umí náš CanSat?'
           images={[
             {
-              src: '/carousel1.svg',
+              src: '/pojfm.webp',
               alt: 'Image 1',
               captionHeading: 'Primární mise',
               captionDescription: 'Měření teploty a tlaku',
@@ -47,14 +47,14 @@ export default function Home() {
               overlayText: 'Měření teploty a tlaku pomocí senzoru BME280 od společnosti BOSCH'
             },
             {
-              src: '/carousel2.svg',
+              src: '/pojfm.webp',
               alt: 'Image 2',
               captionHeading: 'Pozemní stanice',
               captionDescription: 'Přijímání dat z CanSatu',
               button: true,
             },
             {
-              src: '/carousel3.svg',
+              src: '/pojfm.webp',
               alt: 'Image 3',
               captionHeading: 'Konstrukce',
               captionDescription: 'Vysoká odolnost',
@@ -62,7 +62,7 @@ export default function Home() {
               button: true,
             },
             {
-              src: '/carousel4.svg',
+              src: '/pojfm.webp',
               alt: 'Image 4',
               captionHeading: '',
               captionDescription: '',
