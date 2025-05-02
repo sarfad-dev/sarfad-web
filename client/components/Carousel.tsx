@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement>(null);
 
-  const visibleItems = useBreakpointValue({ base: 1, sm: 2, md: 3, lg: 4 }) || 4;
+  const visibleItems = useBreakpointValue({ base: 2, sm: 2, '2xl': 4 }) || 4;
   const itemWidth = `${100 / visibleItems}%`;
 
   const scroll = (direction: 'left' | 'right') => {
