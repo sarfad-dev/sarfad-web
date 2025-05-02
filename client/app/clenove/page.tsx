@@ -29,6 +29,14 @@ export default function Members() {
             overlayText: ''
           },
           {
+            src: '/jakub.webp',
+            alt: 'Jakub Holub',
+            captionHeading: 'Jakub Holub',
+            captionDescription: 'Manažer týmu',
+            button: true,
+            overlayText: ''
+          },
+          {
             src: '/daniel.webp',
             alt: 'Daniel Tomis',
             captionHeading: 'Daniel Tomis',
@@ -38,17 +46,10 @@ export default function Members() {
             overlayText: ''
           },
           {
-            src: '/jakub.webp',
-            alt: 'Jakub Holub',
-            captionHeading: 'Jakub Holub',
-            captionDescription: 'Manažer týmu',
-            button: true,
-            overlayText: ''
-          },
-          {
             src: '/david.webp',
             alt: 'David Oprštěný',
             captionHeading: 'David Oprštěný',
+            lightBg: true,
             captionDescription: 'PR a marketing',
             button: true,
             overlayText: ''
