@@ -72,6 +72,20 @@ export default function Home() {
         >
         </Carousel>
       </Box>
+      <Box minHeight="80vh" width="100%" pt={10}>
+        <TextContent
+          id='kdo-jsme'
+          heading="Kdo jsme?"
+          description="Jsme tým studentů Střední průmyslové školy ve Frýdku-Místku (POJ-FM) pro rok 2025, zvaný SARFAD. 
+          Naším cílem je vytvořit funkční CanSat, který splní všechny požadavky soutěže."
+          image={true}
+          imageSrc="/team.webp"
+          imageAlt="Tým"
+          button={true}
+          buttonText="Zobrazit členy týmu"
+          buttonLink='/clenove'
+        />
+      </Box>
       <Box minHeight="80vh" width="100%">
         <TextContent
           id='live-web'
