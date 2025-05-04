@@ -39,36 +39,39 @@ export default function Home() {
           heading='Co umí náš CanSat?'
           images={[
             {
-              src: '/pojfm.webp',
-              alt: 'Image 1',
-              captionHeading: 'Primární mise',
-              captionDescription: 'Měření teploty a tlaku',
-              button: true,
-              overlayText: 'Měření teploty a tlaku pomocí senzoru BME280 od společnosti BOSCH'
-            },
-            {
-              src: '/pojfm.webp',
-              alt: 'Image 2',
-              captionHeading: 'Pozemní stanice',
-              captionDescription: 'Přijímání dat z CanSatu',
-              button: true,
-            },
-            {
-              src: '/pojfm.webp',
-              alt: 'Image 3',
-              captionHeading: 'Konstrukce',
-              captionDescription: 'Vysoká odolnost',
-              lightBg: true,
-              button: true,
-            },
-            {
-              src: '/pojfm.webp',
-              alt: 'Image 4',
-              captionHeading: '',
-              captionDescription: '',
-              lightBg: true,
-              button: true
-            },
+            src: '/pojfm.webp',
+            alt: 'Image 1',
+            captionHeading: 'Primární mise',
+            captionDescription: 'Sledování atmosférických podmínek',
+            button: true,
+            overlayText: 'CanSat měří teplotu, tlak a vlhkost pomocí senzoru BME280 od společnosti BOSCH s vysokou přesností a rychlou odezvou.'
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Image 2',
+            captionHeading: 'Pozemní stanice',
+            captionDescription: 'Příjem a vizualizace dat',
+            button: true,
+            overlayText: 'Každou sekundu přijímáme telemetrii z CanSatu a zobrazujeme ji živě ve webovém rozhraní s grafy a logováním.'
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Image 3',
+            captionHeading: 'Záznam letu',
+            captionDescription: 'Integrovaná kamera',
+            lightBg: true,
+            button: true,
+            overlayText: 'Během sestupu CanSat natáčí video směrem dolů, což umožňuje vizuální analýzu letu a prostředí pod sebou.'
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Image 4',
+            captionHeading: 'Plošný spoj',
+            captionDescription: 'Návrh a výroba PCB',
+            lightBg: true,
+            button: true,
+            overlayText: 'Všechny komponenty spojuje náš vlastní dvouvrstvý plošný spoj navržený v KiCADu — kompaktní, přehledný a optimalizovaný pro letecké podmínky.'
+          }
           ]}
         >
         </Carousel>
@@ -108,30 +111,31 @@ export default function Home() {
           id='sponsors'
           heading='Naši sponzoři'
           images={[
-            {
+             {
               src: '/pojfm.webp',
               alt: 'Poj-FM',
               button: true,
-              overlayText: 'Střední průmyslová škola ve Frýdku-Místku, na kterou chodí členové týmu SARFAD.',
+              overlayText: 'Střední průmyslová škola ve Frýdku-Místku, kde tým SARFAD vznikl a rozvíjí své projekty.'
             },
             {
               src: '/laskakit.webp',
-              alt: 'laskakit',
+              alt: 'Laskakit',
               button: true,
-              overlayText: 'Český e-shop, který prodává elektroniku pro vývojové desky ESP, RPI, Arduino...',
+              overlayText: 'Český dodavatel vývojových kitů a elektronických komponent pro ESP32, Arduino, Raspberry Pi a další.'
             },
             {
               src: 'pojspace.webp',
               alt: 'PojSpace',
               button: true,
-              overlayText: 'Studentský technologický klub, působící na Střední průmyslové škole ve Frýdku-Místku.',
+              overlayText: 'Technologický klub studentů SPŠ Frýdek-Místek, který propojuje mladé nadšence do IT, elektrotechniky a vesmíru.'
             },
             {
               src: 'velux.webp',
               alt: 'Velux',
               button: true,
-              overlayText: 'Nadace The Velux Foundations, která podporuje školy s proaktivním myšlením.',
+              overlayText: 'Dánská nadace The VELUX Foundations, která podporuje inovativní vzdělávání a projekty s dopadem na společnost.'
             }
+
           ]}
           >
         </Carousel>
