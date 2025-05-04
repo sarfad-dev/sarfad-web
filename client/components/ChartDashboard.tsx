@@ -57,7 +57,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
       width="100%"
       height="50vh"
       bg="blackAlpha.100"
-      p={6}
+      p={4}
       borderRadius="2xl"
       boxShadow="lg"
     >
@@ -123,7 +123,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                   font: {
                     size: 12,
                   },
-                  padding: 5,
+                  padding: 10,
                 },
                 grid: {
                   color: 'rgba(0, 0, 0, 0.05)',
