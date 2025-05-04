@@ -31,11 +31,18 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
         })
         .then((data) => {
           if (!data || !data[type]) return;
+          const now = new Date();
+          const formattedTime = now.toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+          });
           const newPoint = {
-            time: new Date().toLocaleTimeString(),
+            time: formattedTime,
             value: data[type],
           };
-          setDataPoints((prev) => [...prev.slice(-20), newPoint]);
+          setDataPoints((prev) => [...prev.slice(-9), newPoint]);
         })
         .catch((err) => console.error('Fetch error:', err));
     }, 1000);
@@ -122,8 +129,6 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                 },
               },
               y: {
-                suggestedMin: 15,
-                suggestedMax: 30,
                 ticks: {
                   color: '#4A5568',
                   font: {
