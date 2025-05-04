@@ -44,6 +44,7 @@ export default function Home() {
             alt: 'Image 1',
             captionHeading: 'Primární mise',
             captionDescription: 'Sledování atmosférických podmínek',
+            lightBg: true,
             button: true,
             overlayText: 'CanSat měří teplotu, tlak a vlhkost pomocí senzoru BME280 od společnosti BOSCH s vysokou přesností a rychlou odezvou.'
           },
@@ -52,6 +53,7 @@ export default function Home() {
             alt: 'Image 2',
             captionHeading: 'Pozemní stanice',
             captionDescription: 'Příjem a vizualizace dat',
+            lightBg: true,
             button: true,
             overlayText: 'Každou sekundu přijímáme telemetrii z CanSatu a zobrazujeme ji živě ve webovém rozhraní s grafy a logováním.'
           },
