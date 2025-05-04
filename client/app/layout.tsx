@@ -55,7 +55,7 @@ export default function RootLayout({
           rel="preload"
           href="/fonts/SF-Pro.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
       </head>
