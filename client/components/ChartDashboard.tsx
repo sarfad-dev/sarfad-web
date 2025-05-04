@@ -47,12 +47,12 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
     <Box
       width="100%"
       height="50vh"
-      bg="rgba(211, 211, 211, 0.7)"
+      bg="rgba(211, 211, 211, 0.9)"
       p={4}
       borderRadius="lg"
     >
-      <Text fontSize="2xl" mb={4}>
-        Live {label}
+      <Text fontSize="2xl">
+        {label}
       </Text>
       {dataPoints.length === 0 ? (
         <Text>Waiting for data...</Text>
@@ -88,7 +88,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                   color: '#333',
                 },
                 grid: {
-                  color: 'rgba(211, 211, 211, 0.3)',
+                  color: 'rgba(211, 211, 211, 0.5)',
                 },
               },
               y: {
@@ -96,7 +96,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                   color: '#333',
                 },
                 grid: {
-                  color: 'rgba(211, 211, 211, 0.3)',
+                  color: 'rgba(211, 211, 211, 0.5)',
                 },
               },
             },
