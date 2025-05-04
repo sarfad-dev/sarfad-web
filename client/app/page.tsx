@@ -111,7 +111,7 @@ export default function Home() {
       </Box>
       <Box minHeight="80vh" width="100%">
         <Carousel
-          id='sponsori'
+          id='sponzori'
           heading='Naši sponzoři'
           images={[
              {
