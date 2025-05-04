@@ -118,11 +118,12 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
               x: {
                 ticks: {
                   color: '#4A5568',
-                  maxRotation: 45,
-                  minRotation: 45,
+                  maxRotation: 25,
+                  minRotation: 25,
                   font: {
                     size: 12,
                   },
+                  padding: 5,
                 },
                 grid: {
                   color: 'rgba(0, 0, 0, 0.05)',
