@@ -46,6 +46,7 @@ const WithSubnavigation = () => {
             <Flex
                 color={useColorModeValue('gray.600', 'white')}
                 minH={'60px'}
+                bg={useColorModeValue('white', 'gray.800')}
                 py={{ base: 4 }}
                 px={{ base: 4 }}
                 align={'center'}
@@ -135,6 +136,7 @@ const MobileNav = ({ navItems, onLinkClick }: MobileNavProps) => {
                     key={navItem.label} 
                     onClick={onLinkClick}
                     display="block" 
+                    bg='#FFF'
                     p={2} 
                     mb={2}
                     borderRadius="md"
