@@ -32,6 +32,7 @@ const WithSubnavigation = () => {
             { label: 'Co umí?', link: '#co-umi' },
             { label: 'Kdo jsme?', link: '#kdo-jsme' },
             { label: 'Live web', link: '#live-web' },
+            { label: 'Sponzoři', link: '#sponzori' },
         ]
         : [{ label: 'Domů', link: '/' }]
 
