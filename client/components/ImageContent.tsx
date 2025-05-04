@@ -14,11 +14,20 @@ interface ImageContentProps {
 	isLCP?: boolean;
 }
 
-const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, captionDescription, button, lightBg, overlayText, isLCP }) => {
+const ImageContent: React.FC<ImageContentProps> = ({
+	src,
+	alt,
+	captionHeading,
+	captionDescription,
+	button = false,
+	lightBg = false,
+	overlayText,
+	isLCP = false,
+}) => {
 	const [isFaded, setIsFaded] = useState(false);
 
 	const handleButtonClick = () => {
-		setIsFaded(prevState => !prevState);
+		setIsFaded((prev) => !prev);
 	};
 
 	return (
@@ -34,21 +43,21 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 				opacity={isFaded ? 1 : 0}
 				transition="opacity 1s ease-in-out"
 				zIndex={1}
-				pointerEvents={isFaded ? "auto" : "none"}
+				pointerEvents={isFaded ? 'auto' : 'none'}
 			/>
 			<Image
 				src={src}
 				alt={alt}
-				objectFit="contain"
-				maxWidth="100%"
-				height="auto"
+				objectFit="cover"
+				width="100%"
+				height="100%"
 				borderRadius={10}
 				draggable="false"
 				userSelect="none"
 				opacity={isFaded ? 0 : 1}
 				transition="opacity 1s ease-in-out"
 				zIndex={0}
-				loading={isLCP ? "eager" : "lazy"}
+				loading={isLCP ? 'eager' : 'lazy'}
 			/>
 
 			{(captionHeading || captionDescription) && (
@@ -56,16 +65,16 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					position="absolute"
 					top={{ base: 4, md: 8 }}
 					left={{ base: 4, md: 8 }}
-					color={lightBg ? "black" : "white"}
+					color={lightBg ? 'black' : 'white'}
 					p={2}
 				>
 					{captionHeading && (
-						<Text fontSize={{ base: "xl", md: "2xl" }}>
+						<Text fontSize={{ base: 'xl', md: '2xl' }}>
 							{captionHeading}
 						</Text>
 					)}
 					{captionDescription && (
-						<Text fontWeight="bold" fontSize={{ base: "2xl", md: "3xl" }}>
+						<Text fontWeight="bold" fontSize={{ base: '2xl', md: '3xl' }}>
 							{captionDescription}
 						</Text>
 					)}
@@ -77,17 +86,17 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					position="absolute"
 					bottom={{ base: 2, md: 4 }}
 					right={{ base: 2, md: 4 }}
-					width= "3rem"
-					height= "3rem"
+					width="3rem"
+					height="3rem"
 					fontSize="lg"
 					borderRadius="full"
 					bg="black"
 					color="white"
-					_hover={{ bg: "#301934" }}
+					_hover={{ bg: '#301934' }}
 					onClick={handleButtonClick}
 					zIndex={2}
 				>
-					{isFaded ? "-" : "+"}
+					{isFaded ? '-' : '+'}
 				</Button>
 			)}
 
@@ -105,7 +114,11 @@ const ImageContent: React.FC<ImageContentProps> = ({ src, alt, captionHeading, c
 					opacity={isFaded ? 1 : 0}
 					transition="opacity 1s ease-in-out"
 				>
-					<Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" whiteSpace="pre-wrap">
+					<Text
+						fontSize={{ base: 'xl', md: '2xl' }}
+						fontWeight="bold"
+						whiteSpace="pre-wrap"
+					>
 						{overlayText}
 					</Text>
 				</Box>
