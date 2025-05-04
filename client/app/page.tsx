@@ -26,7 +26,7 @@ export default function Home() {
           description="Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
           funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru."
           image={true}
-          imageSrc="/cansat.svg"
+          imageSrc="/cansat.webp"
           imageAlt="Rocket"
           isLCP={true}
           button={true}
@@ -84,7 +84,7 @@ export default function Home() {
           description="Jsme tým studentů Střední průmyslové školy ve Frýdku-Místku (POJ-FM) pro rok 2025, zvaný SARFAD. 
           Naším cílem je vytvořit funkční CanSat, který splní všechny požadavky soutěže."
           image={true}
-          imageSrc="/cansat.svg"
+          imageSrc="/team.webp"
           imageAlt="Tým"
           button={true}
           buttonText="Zobrazit členy týmu"

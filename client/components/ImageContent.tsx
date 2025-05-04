@@ -49,8 +49,10 @@ const ImageContent: React.FC<ImageContentProps> = ({
 				src={src}
 				alt={alt}
 				objectFit="cover"
+				objectPosition="center"
 				width="100%"
-				height="100%"
+				maxH={1200}
+				maxW={800}
 				borderRadius={10}
 				draggable="false"
 				userSelect="none"
@@ -60,7 +62,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
 				loading={isLCP ? 'eager' : 'lazy'}
 			/>
 
-			{(captionHeading || captionDescription) && (
+			{captionHeading || captionDescription ? (
 				<Box
 					position="absolute"
 					top={{ base: 4, md: 8 }}
@@ -79,7 +81,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
 						</Text>
 					)}
 				</Box>
-			)}
+			) : null}
 
 			{button && (
 				<Button
