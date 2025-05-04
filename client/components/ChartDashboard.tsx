@@ -49,7 +49,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
     <Box
       width="100%"
       height="50vh"
-      bg="white"
+      bg="blackAlpha.100"
       p={6}
       borderRadius="2xl"
       boxShadow="lg"
