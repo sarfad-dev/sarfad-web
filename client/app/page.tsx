@@ -1,11 +1,12 @@
 'use client';
+import dynamic from 'next/dynamic';
 import Nav from '@/components/Navbar';
 import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import TextContent from '@/components/TextContent';
 import { Box } from '@chakra-ui/react';
 import ScrollUpButton from '@/components/scrollUpButton';
-import Carousel from '@/components/Carousel';
+const Carousel = dynamic(() => import('@/components/Carousel'), { ssr: false });
 
 export default function Home() {
   return (
