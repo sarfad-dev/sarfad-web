@@ -66,6 +66,7 @@ const TextContent: React.FC<TextContentProps> = ({
 									_hover={{ bg: '#301934' }}
 									borderRadius="md"
 									mt={4}
+									letterSpacing={1}
 								>
 									{buttonText}
 								</Button>
