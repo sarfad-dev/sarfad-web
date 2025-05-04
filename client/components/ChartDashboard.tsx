@@ -122,6 +122,8 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                 },
               },
               y: {
+                suggestedMin: 15,
+                suggestedMax: 30,
                 ticks: {
                   color: '#4A5568',
                   font: {
