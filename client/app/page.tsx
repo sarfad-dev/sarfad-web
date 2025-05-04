@@ -112,25 +112,25 @@ export default function Home() {
               src: '/pojfm.webp',
               alt: 'Poj-FM',
               button: true,
-              overlayText: 'Střední průmyslová škola ve Frýdku-Místku',
+              overlayText: 'Střední průmyslová škola ve Frýdku-Místku, na kterou chodí členové týmu SARFAD.',
             },
             {
               src: '/laskakit.webp',
               alt: 'laskakit',
               button: true,
-              overlayText: '',
+              overlayText: 'Český e-shop, který prodává elektroniku pro vývojové desky ESP, RPI, Arduino...',
             },
             {
               src: 'pojspace.webp',
               alt: 'PojSpace',
               button: true,
-              overlayText: '',
+              overlayText: 'Studentský technologický klub, působící na Střední průmyslové škole ve Frýdku-Místku.',
             },
             {
               src: 'velux.webp',
               alt: 'Velux',
               button: true,
-              overlayText: '',
+              overlayText: 'Nadace The Velux Foundations, která podporuje školy s proaktivním myšlením.',
             }
           ]}
           >
