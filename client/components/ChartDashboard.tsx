@@ -43,19 +43,22 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
     return () => clearInterval(interval);
   }, [type]);
 
+  const rgbaColor = color.replace('rgb', 'rgba').replace(')', ', 0.2)');
+
   return (
     <Box
       width="100%"
       height="50vh"
-      bg="rgba(211, 211, 211, 0.9)"
-      p={4}
-      borderRadius="lg"
+      bg="white"
+      p={6}
+      borderRadius="2xl"
+      boxShadow="lg"
     >
-      <Text fontSize="2xl">
+      <Text fontSize="2xl" fontWeight="bold" mb={4} color="gray.700">
         {label}
       </Text>
       {dataPoints.length === 0 ? (
-        <Text>Waiting for data...</Text>
+        <Text color="gray.500">Waiting for data...</Text>
       ) : (
         <Line
           data={{
@@ -66,37 +69,67 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                 data: dataPoints.map((p) => p.value),
                 fill: true,
                 borderColor: color,
-                backgroundColor: 'rgba(211, 211, 211, 0.3)',
-                tension: 0.1,
+                backgroundColor: rgbaColor,
+                tension: 0.3,
+                pointRadius: 3,
+                pointBackgroundColor: color,
               },
             ],
           }}
           options={{
+            responsive: true,
+            maintainAspectRatio: false,
             plugins: {
               legend: {
+                display: true,
+                position: 'top',
                 labels: {
-                  color: '#333',
+                  color: '#2D3748',
+                  font: {
+                    size: 14,
+                    weight: 'bold',
+                  },
+                  boxWidth: 20,
+                  padding: 15,
                 },
+              },
+              tooltip: {
+                backgroundColor: '#2D3748',
+                titleColor: '#fff',
+                bodyColor: '#fff',
               },
             },
             layout: {
-              padding: 10,
+              padding: {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                right: 10,
+              },
             },
             scales: {
               x: {
                 ticks: {
-                  color: '#333',
+                  color: '#4A5568',
+                  maxRotation: 45,
+                  minRotation: 45,
+                  font: {
+                    size: 12,
+                  },
                 },
                 grid: {
-                  color: 'rgba(211, 211, 211, 0.5)',
+                  color: 'rgba(0, 0, 0, 0.05)',
                 },
               },
               y: {
                 ticks: {
-                  color: '#333',
+                  color: '#4A5568',
+                  font: {
+                    size: 12,
+                  },
                 },
                 grid: {
-                  color: 'rgba(211, 211, 211, 0.5)',
+                  color: 'rgba(0, 0, 0, 0.05)',
                 },
               },
             },
