@@ -4,8 +4,8 @@ import "./globals.css";
 import { Providers } from './providers';
 
 const font = localFont({
-  src: '../public/fonts/SF-Pro.ttf',
-  display: 'swap',
+  src: '../public/fonts/SFPro-Regular.woff2',
+  display: 'optional',
 });
 
 export const metadata: Metadata = {
@@ -53,7 +53,7 @@ export default function RootLayout({
 
         <link
           rel="preload"
-          href="/fonts/SF-Pro.ttf"
+          href="/fonts/SFPro-Regular.woff2"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
