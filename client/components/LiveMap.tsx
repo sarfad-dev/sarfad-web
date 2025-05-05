@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, SimpleGrid } from '@chakra-ui/react';
 import { MapContainer, TileLayer, Marker, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useRef, useState } from 'react';
@@ -49,18 +49,30 @@ const LiveMap = () => {
 	}, []);
 
 	return (
-		<Box width="100%" height="60vh" p={4} borderRadius="2xl" boxShadow="lg" bg="blackAlpha.100">
-			<Text fontSize="2xl" fontWeight="bold" mb={4} color="gray.700">Live Location</Text>
-			<MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ height: '100%', borderRadius: '1rem' }}>
-				<TileLayer
-					attribution='&copy; <a href="https://osm.org">OpenStreetMap</a>'
-					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-				/>
-				<MapCenterer position={position} />
-				<Marker position={position} ref={markerRef}></Marker>
-				<Polyline positions={path} color="blue" />
-			</MapContainer>
-		</Box>
+		<>
+			<Box width="100%" height="60vh" p={4} borderRadius="2xl" boxShadow="lg" bg="blackAlpha.100">
+				<Text fontSize="2xl" fontWeight="bold" mb={4} color="gray.700">Live Location</Text>
+				<MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ height: '100%', borderRadius: '1rem' }}>
+					<TileLayer
+						attribution='&copy; <a href="https://osm.org">OpenStreetMap</a>'
+						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+					/>
+					<MapCenterer position={position} />
+					<Marker position={position} ref={markerRef}></Marker>
+					<Polyline positions={path} color="blue" />
+				</MapContainer>
+			</Box>
+			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pt={'3rem'}>
+				<Box p={4} borderRadius="md" boxShadow="md" bg="white">
+					<Text fontSize="lg" fontWeight="bold" color="gray.600">Latitude</Text>
+					<Text fontSize="xl" fontWeight="bold" color="blue.500">{position[0]}</Text>
+				</Box>
+				<Box p={4} borderRadius="md" boxShadow="md" bg="white">
+					<Text fontSize="lg" fontWeight="bold" color="gray.600">Longitude</Text>
+					<Text fontSize="xl" fontWeight="bold" color="blue.500">{position[1]}</Text>
+				</Box>
+			</SimpleGrid>
+		</>
 	);
 };
 
