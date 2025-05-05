@@ -22,7 +22,7 @@ export default function Members() {
         heading='Náš tým'
         images={[
           {
-            src: '/prokop.webp',
+            src: '/members/prokop.webp',
             alt: 'Prokop Havlík',
             captionHeading: 'Prokop Havlík',
             captionDescription: 'Vedoucí týmu',
@@ -30,7 +30,7 @@ export default function Members() {
             overlayText: ''
           },
           {
-            src: '/jakub.webp',
+            src: '/members/jakub.webp',
             alt: 'Jakub Holub',
             captionHeading: 'Jakub Holub',
             lightBg: true,
@@ -39,7 +39,7 @@ export default function Members() {
             overlayText: ''
           },
           {
-            src: '/daniel.webp',
+            src: '/members/daniel.webp',
             alt: 'Daniel Tomis',
             captionHeading: 'Daniel Tomis',
             lightBg: true,
@@ -48,7 +48,7 @@ export default function Members() {
             overlayText: ''
           },
           {
-            src: '/david.webp',
+            src: '/members/david.webp',
             alt: 'David Oprštěný',
             captionHeading: 'David Oprštěný',
             lightBg: true,
@@ -57,7 +57,7 @@ export default function Members() {
             overlayText: ''
           },
           {
-            src: '/alexandr.webp',
+            src: '/members/alexandr.webp',
             alt: 'Alexandr Chovanec',
             captionHeading: 'Alexandr Chovanec',
             lightBg: true,
