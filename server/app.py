@@ -23,7 +23,11 @@ CORS(app)
 def receive_data():
     try:
         data = request.json
-        required_fields = ["id", "time", "temperature", "humidity", "pressure", "latitude", "longitude", "altitude"]
+        required_fields = [
+            "id", "time", "temperature", "humidity", "pressure",
+            "latitude", "longitude", "altitude", "altitudecalc",
+            "battery", "current", "voltage"
+        ]
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Missing data fields"}), 400
 
@@ -38,6 +42,10 @@ def receive_data():
             .field("latitude", float(data["latitude"])) \
             .field("longitude", float(data["longitude"])) \
             .field("altitude", float(data["altitude"])) \
+            .field("altitudecalc", float(data["altitudecalc"])) \
+            .field("battery", float(data["battery"])) \
+            .field("current", float(data["current"])) \
+            .field("voltage", float(data["voltage"])) \
             .time(timestamp)
 
         write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
