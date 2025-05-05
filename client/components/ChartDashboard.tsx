@@ -109,7 +109,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
             layout: {
               padding: {
                 top: 10,
-                bottom: 10,
+                bottom: 40,
                 left: 10,
                 right: 10,
               },
