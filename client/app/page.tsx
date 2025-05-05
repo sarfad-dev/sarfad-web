@@ -41,7 +41,7 @@ export default function Home() {
           images={[
             {
             src: '/pojfm.webp',
-            alt: 'Image 1',
+            alt: 'Primární mise',
             captionHeading: 'Primární mise',
             captionDescription: 'Sledování atmosférických podmínek',
             lightBg: true,
@@ -50,7 +50,7 @@ export default function Home() {
           },
           {
             src: '/pojfm.webp',
-            alt: 'Image 2',
+            alt: 'Pozemní stanice',
             captionHeading: 'Pozemní stanice',
             captionDescription: 'Příjem a vizualizace dat',
             lightBg: true,
@@ -59,7 +59,7 @@ export default function Home() {
           },
           {
             src: '/pojfm.webp',
-            alt: 'Image 3',
+            alt: 'Záznam letu',
             captionHeading: 'Záznam letu',
             captionDescription: 'Integrovaná kamera',
             lightBg: true,
@@ -68,13 +68,50 @@ export default function Home() {
           },
           {
             src: '/pojfm.webp',
-            alt: 'Image 4',
+            alt: 'Plošný spoj',
             captionHeading: 'Plošný spoj',
             captionDescription: 'Návrh a výroba PCB',
             lightBg: true,
             button: true,
             overlayText: 'Všechny komponenty spojuje náš vlastní dvouvrstvý plošný spoj navržený v KiCADu — kompaktní, přehledný a optimalizovaný pro letecké podmínky.'
-          }
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Záchranný systém',
+            captionHeading: 'Záchranný systém',
+            captionDescription: 'Speciální padák',
+            lightBg: true,
+            button: true,
+            overlayText: ''
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Lokalizace',
+            captionHeading: 'Lokalizace',
+            captionDescription: 'Aplikace pro nálezení',
+            lightBg: true,
+            button: true,
+            overlayText: 'CanSat je vybaven GPS modulem, který umožňuje sledování polohy a rychlosti během letu. Tato data jsou přenášena na pozemní stanici a následně se zobrazují prostřednictvím map.'
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Oboustranná komunikace',
+            captionHeading: 'Oboustranná komunikace',
+            captionDescription: 'Ovládání na dálku',
+            lightBg: true,
+            button: true,
+            overlayText: 'CanSat je vybaven modulem LoRa, který umožňuje obousměrnou komunikaci mezi pozemní stanicí a CanSatem. Tato technologie zajišťuje spolehlivý přenos dat na velké vzdálenosti.'
+          },
+          {
+            src: '/pojfm.webp',
+            alt: 'Interpretace dat',
+            captionHeading: 'Interpretace dat',
+            captionDescription: 'Data v reálném čase na webu',
+            lightBg: true,
+            button: true,
+            overlayText: 'Naše webová aplikace zpracovává a vizualizuje data v reálném čase, což umožňuje uživatelům sledovat let a analyzovat naměřené hodnoty.'
+          },
+          
           ]}
         >
         </Carousel>
