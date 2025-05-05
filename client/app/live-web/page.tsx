@@ -23,7 +23,7 @@ export default function LiveWeb() {
 						<ChartDashboard type="humidity" label="Vlhkost (%)" color="royalblue" />
 						<ChartDashboard type="pressure" label="Tlak (hPa)" color="orange" />
 						<ChartDashboard type="battery" label="Odhadovaná kapacita baterie (%)" color="green" />
-						<ChartDashboard type="altitudecalc" label="Vypočítaná nadmořská výška z tlaku" color="blue" />
+						<ChartDashboard type="altitudecalc" label="Vypočítaná nadmořská výška z tlaku (m)" color="blue" />
 						<ChartDashboard type="altitude" label="Nadmořská výška (m)" color="purple"/>
 						<ChartDashboard type="current" label="Odebíraný proud (A)" color="yellow" />
 						<ChartDashboard type="voltage" label="Napětí baterie (V)" color="pink" />
