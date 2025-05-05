@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Text } from '@chakra-ui/react';
-import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
@@ -16,6 +16,14 @@ L.Icon.Default.mergeOptions({
 	iconUrl: markerIcon.src,
 	shadowUrl: markerShadow.src,
 });
+
+const MapCenterer = ({ position }: { position: [number, number] }) => {
+	const map = useMap();
+	useEffect(() => {
+		map.setView(position, map.getZoom());
+	}, [position, map]);
+	return null;
+};
 
 const LiveMap = () => {
 	const [position, setPosition] = useState<[number, number]>([0, 0]);
@@ -48,6 +56,7 @@ const LiveMap = () => {
 					attribution='&copy; <a href="https://osm.org">OpenStreetMap</a>'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
+				<MapCenterer position={position} />
 				<Marker position={position} ref={markerRef}></Marker>
 				<Polyline positions={path} color="blue" />
 			</MapContainer>
