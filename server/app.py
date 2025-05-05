@@ -4,18 +4,18 @@ from datetime import datetime, timezone
 from influxdb_client import InfluxDBClient, Point
 import os
 
-# Load env vars
+# Load environment variables
 INFLUXDB_URL = os.getenv("INFLUXDB_URL")
 INFLUXDB_TOKEN = os.getenv("INFLUXDB_TOKEN")
 INFLUXDB_ORG = os.getenv("INFLUXDB_ORG")
 INFLUXDB_BUCKET = os.getenv("INFLUXDB_BUCKET")
 
-# Connect to InfluxDB
+# InfluxDB setup
 client = InfluxDBClient(url=INFLUXDB_URL, token=INFLUXDB_TOKEN)
 write_api = client.write_api()
 query_api = client.query_api()
 
-# Create Flask app
+# Flask app
 app = Flask(__name__)
 CORS(app)
 
@@ -23,20 +23,21 @@ CORS(app)
 def receive_data():
     try:
         data = request.json
-        required_fields = ["oxygen", "carbonDioxide", "uvIndex", "pressure", "humidity", "temperature"]
+        required_fields = ["id", "time", "temperature", "humidity", "pressure", "latitude", "longitude", "altitude"]
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Missing data fields"}), 400
 
         timestamp = datetime.now(timezone.utc).isoformat()
 
-        point = Point("sensor_readings") \
-            .tag("device", "ESP32") \
-            .field("oxygen", data["oxygen"]) \
-            .field("carbonDioxide", data["carbonDioxide"]) \
-            .field("uvIndex", data["uvIndex"]) \
-            .field("pressure", data["pressure"]) \
-            .field("humidity", data["humidity"]) \
-            .field("temperature", data["temperature"]) \
+        point = Point("cansat_readings") \
+            .tag("device", "ESP32-CANSAT") \
+            .field("id", int(data["id"])) \
+            .field("temperature", float(data["temperature"])) \
+            .field("humidity", float(data["humidity"])) \
+            .field("pressure", float(data["pressure"])) \
+            .field("latitude", float(data["latitude"])) \
+            .field("longitude", float(data["longitude"])) \
+            .field("altitude", float(data["altitude"])) \
             .time(timestamp)
 
         write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
@@ -51,9 +52,9 @@ def get_latest_sensor_data():
     try:
         query = f'''
         from(bucket: "{INFLUXDB_BUCKET}")
-			|> range(start: -10s)
-			|> filter(fn: (r) => r._measurement == "sensor_readings")
-			|> last()
+            |> range(start: -1m)
+            |> filter(fn: (r) => r._measurement == "cansat_readings")
+            |> last()
         '''
         result = query_api.query(org=INFLUXDB_ORG, query=query)
 
