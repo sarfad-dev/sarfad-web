@@ -27,12 +27,40 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
   const visibleItems = useBreakpointValue({ base: 2, sm: 2, '2xl': 4 }) || 4;
   const itemWidth = `${100 / visibleItems}%`;
 
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, offsetWidth } = scrollRef.current;
+
+      if (scrollLeft + offsetWidth >= scrollWidth) {
+        scrollRef.current.scrollLeft = 0;
+      }
+    }
+  };
+
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current && itemRef.current) {
       const scrollAmount = itemRef.current.offsetWidth;
-      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+      const container = scrollRef.current;
+      const maxScrollLeft = container.scrollWidth - container.offsetWidth;
+
+      if (direction === 'left') {
+        if (container.scrollLeft <= 0) {
+          // Jump to the end
+          container.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+      } else {
+        if (container.scrollLeft + scrollAmount >= maxScrollLeft) {
+          // Jump to the start
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
     }
   };
+
 
   return (
     <Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" width="100%" id={id}>
@@ -59,7 +87,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
             icon={<FaArrowLeft />}
             onClick={() => scroll('left')}
             position="absolute"
-            left={{base: "-2rem", "2xl": "-3rem"}}
+            left={{ base: '-2rem', '2xl': '-3rem' }}
             zIndex={2}
             borderRadius="full"
             size="md"
@@ -108,7 +136,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
             icon={<FaArrowRight />}
             onClick={() => scroll('right')}
             position="absolute"
-            right={{base: "-2rem", "2xl": "-3rem"}}
+            right={{ base: '-2rem', '2xl': '-3rem' }}
             zIndex={2}
             borderRadius="full"
             size="md"
