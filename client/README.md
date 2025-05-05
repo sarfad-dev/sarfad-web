@@ -20,7 +20,7 @@ This is the frontend of the SARFAD web application. It is built with React and N
 - React (Next.js)
 - Tailwind CSS
 - Chakra UI
-- Recharts (charts)
+- Charts.js (charts)
 - Leaflet.js (maps)
 - Dynamic components via `next/dynamic`
 
