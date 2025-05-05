@@ -23,6 +23,7 @@ cd server
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 - Create a .env file in the root of the repository
 
@@ -31,8 +32,9 @@ INFLUX_URL=http://localhost:8086
 INFLUX_TOKEN=your-token-here
 INFLUX_ORG=your-org
 INFLUX_BUCKET=your-bucket
-
+```
 - Run the flask server
 
 ```bash
 python app.py
+```

@@ -31,3 +31,4 @@ cd client
 npm install
 npm run dev
 - Frontend runs by default at http://localhost:3000
+```
