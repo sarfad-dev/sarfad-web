@@ -132,6 +132,18 @@ export default function Home() {
               overlayText: 'Technologický klub studentů SPŠ Frýdek-Místek, který propojuje mladé nadšence do IT, elektrotechniky a vesmíru.'
             },
             {
+              src: 'notion.webp',
+              alt: 'Notion',
+              button: true,
+              overlayText: 'Notion je nástroj pro organizaci a spolupráci, který nám pomáhá spravovat projekty a dokumentaci.'
+            },
+            {
+              src: 'prusaresearch.webp',
+              alt: 'Prusa Research',
+              button: true,
+              overlayText: 'Česká firma známá svými 3D tiskárnami a inovativními technologiemi, která nám poskytla 3D tiskárnu PRUSA MK4S.'
+            },
+            {
               src: 'velux.webp',
               alt: 'Velux',
               button: true,
