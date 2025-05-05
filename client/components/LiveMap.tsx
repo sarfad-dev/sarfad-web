@@ -64,11 +64,11 @@ const LiveMap = () => {
 			</Box>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pt={'3rem'}>
 				<Box p={4} borderRadius="md" boxShadow="md" bg="white">
-					<Text fontSize="lg" fontWeight="bold" color="gray.600">Latitude</Text>
+					<Text fontSize="lg" fontWeight="bold" color="gray.600">Zeměpisná šírka</Text>
 					<Text fontSize="xl" fontWeight="bold" color="blue.500">{position[0]}</Text>
 				</Box>
 				<Box p={4} borderRadius="md" boxShadow="md" bg="white">
-					<Text fontSize="lg" fontWeight="bold" color="gray.600">Longitude</Text>
+					<Text fontSize="lg" fontWeight="bold" color="gray.600">Zeměpisná výška</Text>
 					<Text fontSize="xl" fontWeight="bold" color="blue.500">{position[1]}</Text>
 				</Box>
 			</SimpleGrid>
