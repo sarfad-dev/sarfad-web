@@ -42,11 +42,11 @@ const WithSubnavigation = () => {
             top="-1"
             w="100%"
             zIndex={1}
+            bg={useColorModeValue('white', 'gray.800')}
         >
             <Flex
                 color={useColorModeValue('gray.600', 'white')}
                 minH={'60px'}
-                bg={useColorModeValue('white', 'gray.800')}
                 py={{ base: 4 }}
                 px={{ base: 4 }}
                 align={'center'}
