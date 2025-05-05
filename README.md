@@ -43,8 +43,10 @@ sarfad/
 │   └── requirements.txt
 ├── README.md           # Project documentation (you are here)
 └── LICENSE             # License info
+```
 
 ## Technologies Used
+
 - **Ran by**
     - Docker
 - **Frontend**:
