@@ -59,7 +59,6 @@ const LiveMap = () => {
 					/>
 					<MapCenterer position={position} />
 					<Marker position={position} ref={markerRef}></Marker>
-					<Polyline positions={path} color="blue" />
 				</MapContainer>
 			</Box>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pt={'3rem'}>
