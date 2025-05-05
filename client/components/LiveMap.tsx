@@ -82,7 +82,7 @@ const LiveMap = ({ showUserLocation = false, showNavigationButtons = false }: Li
 	};
 
 	const openMapyCz = () => {
-		window.open(`https://mapy.cz/zakladni?x=${canSatPosition[1]}&y=${canSatPosition[0]}&z=17`, '_blank');
+		window.open(`https://mapy.cz/zakladni?source=coor&id=${canSatPosition[1]}%2C${canSatPosition[0]}&x=${canSatPosition[1]}&y=${canSatPosition[0]}&z=19`, '_blank');
 	};
 
 	return (
