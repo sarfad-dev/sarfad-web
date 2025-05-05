@@ -19,9 +19,14 @@ export default function LiveWeb() {
 				<CustomHeading heading="Live web" />
 				<Box px={{ base: 4, md: 10 }} pt="4" pb="20">
 					<SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={10}>
-						<ChartDashboard type="temperature" label="Temperature (°C)" color="tomato" />
-						<ChartDashboard type="humidity" label="Humidity (%)" color="royalblue" />
-						<ChartDashboard type="pressure" label="Pressure (hPa)" color="orange" />
+						<ChartDashboard type="temperature" label="Teplota (°C)" color="tomato" />
+						<ChartDashboard type="humidity" label="Vlhkost (%)" color="royalblue" />
+						<ChartDashboard type="pressure" label="Tlak (hPa)" color="orange" />
+						<ChartDashboard type="altitudecalc" label="Vypočítaná nadmořská výška z tlaku" color="blue" />
+						<ChartDashboard type="altitude" label="Nadmořská výška (m)" color="purple"/>
+						<ChartDashboard type="battery" label="Odhadovaná kapacita baterie (%)" color="green" />
+						<ChartDashboard type="current" label="Odebíraný proud" color="yellow" />
+						<ChartDashboard type="voltage" label="Napětí baterie (V)" color="pink" />
 					</SimpleGrid>
 					<Box p={5}></Box>
 					<LiveMap />
