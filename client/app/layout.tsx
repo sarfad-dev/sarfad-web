@@ -50,6 +50,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://sarfad.eu/" />
         <meta name="robots" content="index, follow" />
         <meta name="publisher" content="Střední průmyslová škola Frýdek-Místek" />
+        <meta name="google-site-verification" content="bgZCgeVZkxFvyQCtQsEkKjLGh8FTp1gfr-_RRLf7mEY" />
 
         <link
           rel="preload"
