@@ -105,7 +105,7 @@ const LiveMap = ({ showUserLocation = false, showNavigationButtons = false }: Li
 				</MapContainer>
 			</Box>
 
-			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pt="3rem">
+			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pt="3rem" textAlign={"center"}>
 				<Box p={4} borderRadius="md" boxShadow="md" bg="white">
 					<Text fontSize="lg" fontWeight="bold" color="gray.600">Zeměpisná šířka</Text>
 					<Text fontSize="xl" fontWeight="bold" color="blue.500">{canSatPosition[0]}</Text>
