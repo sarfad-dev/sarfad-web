@@ -31,16 +31,16 @@ This website serves two main purposes:
 sarfad/
 ├── client/             # React frontend for team site and live dashboard
 │   ├── public/
-│   ├── src/
+│   ├── app/
 │   │   ├── components/ # Reusable UI components, ChartDashboard, Carousel, etc.
 │   │   ├── pages/      # Next.js routing
-│   │   └── App.jsx
+│   │   ├── layout.tsx  # Pages layout
+│   │   └── page.jsx    # Main page
 │   └── package.json
 ├── server/             # Flask backend receiving HTTP data from ESP32
 │   ├── app.py          # Main Flask app
-│   ├── influx.py       # InfluxDB communication logic
-│   ├── .env            # Environment config (credentials, DB URL, etc.)
 │   └── requirements.txt
+├── .env                # Environment config (credentials, DB URL, etc.)
 ├── README.md           # Project documentation (you are here)
 └── LICENSE             # License info
 ```
