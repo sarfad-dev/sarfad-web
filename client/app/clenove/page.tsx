@@ -27,7 +27,7 @@ export default function Members() {
             captionHeading: 'Prokop Havlík',
             captionDescription: 'Vedoucí týmu',
             button: true,
-            overlayText: ''
+            overlayText: 'Navrhuje PCB, programuje pozemní stanici a sekundární misi.'
           },
           {
             src: '/members/jakub.webp',
@@ -36,7 +36,7 @@ export default function Members() {
             lightBg: true,
             captionDescription: 'Manažer týmu',
             button: true,
-            overlayText: ''
+            overlayText: 'Navrhuje konstrukci CanSatu, stará se o hladký project management a pomáhá vytvářet grafiku.'
           },
           {
             src: '/members/daniel.webp',
@@ -45,7 +45,7 @@ export default function Members() {
             lightBg: true,
             captionDescription: 'Programátor webu',
             button: true,
-            overlayText: ''
+            overlayText: 'Programuje hlavní web, live web a stará se o interpretaci dat.'
           },
           {
             src: '/members/david.webp',
@@ -54,7 +54,7 @@ export default function Members() {
             lightBg: true,
             captionDescription: 'PR a marketing',
             button: true,
-            overlayText: ''
+            overlayText: 'Shání sponzory, designuje grafiku, fotí a pomáhá při konstrukci CanSatu.'
           },
           {
             src: '/members/alexandr.webp',
@@ -63,7 +63,7 @@ export default function Members() {
             lightBg: true,
             captionDescription: 'Konstrukce a výroba',
             button: true,
-            overlayText: ''
+            overlayText: 'Vytváří padák, hlavní fyzik a pomáhá se sekundární misí.'
           },
         ]}
       >
