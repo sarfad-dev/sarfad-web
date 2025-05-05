@@ -44,7 +44,7 @@ export default function Home() {
             alt: 'Primární mise',
             captionHeading: 'Primární mise',
             captionDescription: 'Sledování atmosférických podmínek',
-            lightBg: true,
+            lightBg: false,
             button: true,
             overlayText: 'CanSat měří teplotu, tlak a vlhkost pomocí senzoru BME280 od společnosti BOSCH s vysokou přesností a rychlou odezvou.'
           },
@@ -53,7 +53,7 @@ export default function Home() {
             alt: 'Pozemní stanice',
             captionHeading: 'Pozemní stanice',
             captionDescription: 'Příjem a vizualizace dat',
-            lightBg: true,
+            lightBg: false,
             button: true,
             overlayText: 'Každou sekundu přijímáme telemetrii z CanSatu a zobrazujeme ji živě ve webovém rozhraní s grafy a logováním.'
           },
@@ -62,16 +62,16 @@ export default function Home() {
             alt: 'Záznam letu',
             captionHeading: 'Záznam letu',
             captionDescription: 'Integrovaná kamera',
-            lightBg: true,
+            lightBg: false,
             button: true,
             overlayText: 'Během sestupu CanSat natáčí video směrem dolů, což umožňuje vizuální analýzu letu a prostředí pod sebou.'
           },
           {
-            src: '/sponsors/pojfm.webp',
+            src: '/carousel-1/pcb.webp',
             alt: 'Plošný spoj',
             captionHeading: 'Plošný spoj',
             captionDescription: 'Návrh a výroba PCB',
-            lightBg: true,
+            lightBg: false,
             button: true,
             overlayText: 'Všechny komponenty spojuje náš vlastní dvouvrstvý plošný spoj navržený v KiCADu — kompaktní, přehledný a optimalizovaný pro letecké podmínky.'
           },
@@ -80,18 +80,18 @@ export default function Home() {
             alt: 'Záchranný systém',
             captionHeading: 'Záchranný systém',
             captionDescription: 'Speciální padák',
-            lightBg: true,
+            lightBg: false,
             button: true,
-            overlayText: ''
+            overlayText: 'Padák z oranžového polyamidu s prstencovým tvarem zajišťuje stabilní sestup a minimalizuje otáčení, což zlepšuje kvalitu videozáznamu.'
           },
           {
-            src: '/sponsors/pojfm.webp',
+            src: '/carousel-1/lokalizace.webp',
             alt: 'Lokalizace',
             captionHeading: 'Lokalizace',
             captionDescription: 'Aplikace pro nálezení',
-            lightBg: true,
+            lightBg: false,
             button: true,
-            overlayText: 'CanSat je vybaven GPS modulem, který umožňuje sledování polohy a rychlosti během letu. Tato data jsou přenášena na pozemní stanici a následně se zobrazují prostřednictvím map.'
+            overlayText: 'Naše aplikace umožňuje uživatelům najít CanSat pomocí GPS souřadnic a zobrazuje aktuální polohu na mapě.'
           },
           {
             src: '/carousel-1/oboustrannaKomunikace.webp',
@@ -107,7 +107,7 @@ export default function Home() {
             alt: 'Interpretace dat',
             captionHeading: 'Interpretace dat',
             captionDescription: 'Data v reálném čase na webu',
-            lightBg: true,
+            lightBg: false,
             button: true,
             overlayText: 'Naše webová aplikace zpracovává a vizualizuje data v reálném čase, což umožňuje uživatelům sledovat let a analyzovat naměřené hodnoty.'
           },
