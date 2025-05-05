@@ -41,17 +41,19 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
     if (scrollRef.current && itemRef.current) {
       const scrollAmount = itemRef.current.offsetWidth;
       const container = scrollRef.current;
-      const maxScrollLeft = container.scrollWidth - container.offsetWidth;
-
+  
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const currentScrollLeft = container.scrollLeft;
+  
       if (direction === 'left') {
-        if (container.scrollLeft <= 0) {
+        if (currentScrollLeft <= 0) {
           // Jump to the end
           container.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
         } else {
           container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         }
       } else {
-        if (container.scrollLeft + scrollAmount >= maxScrollLeft) {
+        if (currentScrollLeft + scrollAmount >= maxScrollLeft + 20) {
           // Jump to the start
           container.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -60,6 +62,7 @@ const Carousel: React.FC<CarouselProps> = ({ heading, images, id }) => {
       }
     }
   };
+  
 
 
   return (
