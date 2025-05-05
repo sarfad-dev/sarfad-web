@@ -39,7 +39,6 @@ sarfad/
 │   └── package.json
 ├── server/             # Flask backend receiving HTTP data from ESP32
 │   ├── app.py          # Main Flask app
-│   ├── influx.py       # InfluxDB communication logic
 │   └── requirements.txt
 ├── .env                # Environment config (credentials, DB URL, etc.)
 ├── README.md           # Project documentation (you are here)
