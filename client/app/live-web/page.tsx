@@ -5,6 +5,7 @@ import { Box, SimpleGrid } from '@chakra-ui/react';
 import ChartDashboard from '@/components/ChartDashboard';
 import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
+import ScrollUpButton from '@/components/scrollUpButton';
 
 export default function LiveWeb() {
 	return (
@@ -32,6 +33,7 @@ export default function LiveWeb() {
 					</Box>
 				</Box>
 			</Box>
+			<ScrollUpButton />
 		</>
 	);
 }

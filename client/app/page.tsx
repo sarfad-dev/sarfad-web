@@ -107,14 +107,13 @@ export default function Home() {
           buttonText="Zobrazit web"
           buttonLink='/live-web'
         />
-        <ScrollUpButton />
       </Box>
       <Box minHeight="80vh" width="100%">
         <Carousel
           id='sponzori'
           heading='Naši sponzoři'
           images={[
-             {
+            {
               src: '/pojfm.webp',
               alt: 'Poj-FM',
               button: true,
@@ -138,11 +137,12 @@ export default function Home() {
               button: true,
               overlayText: 'Dánská nadace The VELUX Foundations, která podporuje inovativní vzdělávání a projekty s dopadem na společnost.'
             }
-
+            
           ]}
           >
         </Carousel>
       </Box>
+      <ScrollUpButton />
     </>
   );
 }

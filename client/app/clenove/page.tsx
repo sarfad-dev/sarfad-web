@@ -4,6 +4,7 @@ import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import { Box } from '@chakra-ui/react';
 import Carousel from '@/components/Carousel';
+import ScrollUpButton from '@/components/scrollUpButton';
 
 export default function Members() {
   return (
@@ -66,8 +67,8 @@ export default function Members() {
           },
         ]}
       >
-
       </Carousel>
+      <ScrollUpButton />
     </>
   );
 }
