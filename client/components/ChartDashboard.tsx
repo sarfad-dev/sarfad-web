@@ -42,7 +42,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
             time: formattedTime,
             value: data[type],
           };
-          setDataPoints((prev) => [...prev.slice(-9), newPoint]);
+          setDataPoints((prev) => [...prev.slice(-20), newPoint]);
         })
         .catch((err) => console.error('Fetch error:', err));
     }, 1000);
