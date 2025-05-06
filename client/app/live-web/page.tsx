@@ -7,6 +7,7 @@ import CustomHeading from '@/components/CustomHeading';
 import GridBackground from '@/components/GridBackground';
 import ScrollUpButton from '@/components/scrollUpButton';
 import dynamic from 'next/dynamic';
+import { Chart } from 'chart.js';
 
 const LiveMap = dynamic(() => import('@/components/LiveMap'), { ssr: false });
 
@@ -27,6 +28,9 @@ export default function LiveWeb() {
 						<ChartDashboard type="altitude" label="Nadmořská výška (m)" color="purple"/>
 						<ChartDashboard type="current" label="Odebíraný proud (A)" color="yellow" />
 						<ChartDashboard type="voltage" label="Napětí baterie (V)" color="pink" />
+					</SimpleGrid>
+					<SimpleGrid columns={{ base: 1 }} spacing={10} mt={10}>
+						<ChartDashboard type="velocity" label="Rychlost (m/s)" color="gray" />
 					</SimpleGrid>
 					<Box p={5}></Box>
 					<LiveMap />
