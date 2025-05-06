@@ -138,7 +138,7 @@ export default function Home() {
           vizualizacích s aktualizováním v reálném čase."
           image={true}
           halfVisibleImage={false}
-          imageSrc="/live.svg"
+          imageSrc="/live.webp"
           imageAlt="Rocket"
           button={true}
           buttonText="Zobrazit web"
