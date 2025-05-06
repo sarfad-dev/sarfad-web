@@ -25,7 +25,7 @@ def receive_data():
         data = request.json
         required_fields = [
             "id", "time", "temperature", "humidity", "pressure",
-            "latitude", "longitude", "altitude", "altitudecalc",
+            "latitude", "longitude", "altitude",
             "velocity", "battery", "current", "voltage"
         ]
         if not all(field in data for field in required_fields):
@@ -43,7 +43,6 @@ def receive_data():
             .field("latitude", float(data["latitude"])) \
             .field("longitude", float(data["longitude"])) \
             .field("altitude", float(data["altitude"])) \
-            .field("altitudecalc", float(data["altitudecalc"])) \
             .field("velocity", float(data["velocity"])) \
             .field("battery", float(data["battery"])) \
             .field("current", float(data["current"])) \
