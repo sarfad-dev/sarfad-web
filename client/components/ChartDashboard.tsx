@@ -61,7 +61,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
       borderRadius="2xl"
       boxShadow="lg"
     >
-      <Text fontSize="2xl" fontWeight="bold" mb={4} color="gray.700">
+      <Text fontSize={{ base: "lg ", xl: "2xl" }} fontWeight="bold" mb={4} color="gray.700">
         {label}
       </Text>
       {dataPoints.length === 0 ? (
