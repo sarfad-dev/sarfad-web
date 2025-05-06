@@ -31,11 +31,12 @@ def receive_data():
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Missing data fields"}), 400
 
-        timestamp = datetime.now(timezone.utc).isoformat()
+        timestamp_app = datetime.now(timezone.utc).isoformat()
 
         point = Point("cansat_readings") \
             .tag("device", "ESP32-CANSAT") \
             .field("id", int(data["id"])) \
+            .field("time", data["time"]) \
             .field("temperature", float(data["temperature"])) \
             .field("humidity", float(data["humidity"])) \
             .field("pressure", float(data["pressure"])) \
@@ -43,10 +44,11 @@ def receive_data():
             .field("longitude", float(data["longitude"])) \
             .field("altitude", float(data["altitude"])) \
             .field("altitudecalc", float(data["altitudecalc"])) \
+            .field("velocity", float(data["velocity"])) \
             .field("battery", float(data["battery"])) \
             .field("current", float(data["current"])) \
             .field("voltage", float(data["voltage"])) \
-            .time(timestamp)
+            .time(timestamp_app)
 
         write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
 
