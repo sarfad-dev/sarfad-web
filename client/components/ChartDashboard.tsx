@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -17,9 +19,21 @@ interface ChartDashboardProps {
   type: string;
   label: string;
   color?: string;
+  yAxisLabel?: string;
+  yAxisMin?: number;
+  yAxisMax?: number;
+  xAxisLabel?: string;
 }
 
-const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashboardProps) => {
+const ChartDashboard = ({
+  type,
+  label,
+  color = 'rgb(75, 192, 192)',
+  yAxisLabel,
+  yAxisMin,
+  yAxisMax,
+  xAxisLabel = 'Čas',
+}: ChartDashboardProps) => {
   const [dataPoints, setDataPoints] = useState<{ time: string; value: any }[]>([]);
 
   useEffect(() => {
@@ -61,7 +75,7 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
       borderRadius="2xl"
       boxShadow="lg"
     >
-      <Text fontSize={{ base: "lg ", xl: "2xl" }} fontWeight="bold" mb={4} color="gray.700">
+      <Text fontSize={{ base: "lg", xl: "2xl" }} fontWeight="bold" mb={4} color="gray.700">
         {label}
       </Text>
       {dataPoints.length === 0 ? (
@@ -125,6 +139,15 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                   },
                   padding: 10,
                 },
+                title: {
+                  display: !!xAxisLabel,
+                  text: xAxisLabel,
+                  color: '#4A5568',
+                  font: {
+                    size: 14,
+                    weight: 'bold',
+                  },
+                },
                 grid: {
                   color: 'rgba(0, 0, 0, 0.05)',
                 },
@@ -136,9 +159,20 @@ const ChartDashboard = ({ type, label, color = 'rgb(75, 192, 192)' }: ChartDashb
                     size: 12,
                   },
                 },
+                title: {
+                  display: !!yAxisLabel,
+                  text: yAxisLabel,
+                  color: '#4A5568',
+                  font: {
+                    size: 14,
+                    weight: 'bold',
+                  },
+                },
                 grid: {
                   color: 'rgba(0, 0, 0, 0.05)',
                 },
+                min: yAxisMin,
+                max: yAxisMax,
               },
             },
           }}
