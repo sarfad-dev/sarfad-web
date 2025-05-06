@@ -34,7 +34,7 @@ def receive_data():
         required_fields = [
             "id", "time", "temperature", "humidity", "pressure",
             "latitude", "longitude", "altitude",
-            "velocity", "battery", "current", "voltage"
+            "velocity", "current", "voltage"
         ]
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Missing data fields"}), 400
