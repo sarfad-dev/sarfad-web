@@ -33,6 +33,10 @@ def receive_data():
 
         timestamp_app = datetime.now(timezone.utc).isoformat()
 
+        voltage = float(data["voltage"])
+        battery_percent = (voltage - 3.0) / (4.2 - 3.0) * 100
+        battery_percent = max(0, min(100, battery_percent))  # clamp
+
         point = Point("cansat_readings") \
             .tag("device", "ESP32-CANSAT") \
             .field("id", int(data["id"])) \
@@ -44,9 +48,9 @@ def receive_data():
             .field("longitude", float(data["longitude"])) \
             .field("altitude", float(data["altitude"])) \
             .field("velocity", float(data["velocity"])) \
-            .field("battery", float(data["battery"])) \
+            .field("battery", battery_percent) \
             .field("current", float(data["current"])) \
-            .field("voltage", float(data["voltage"])) \
+            .field("voltage", voltage) \
             .time(timestamp_app)
 
         write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
