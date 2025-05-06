@@ -43,7 +43,7 @@ def receive_data():
 
         voltage = float(data["voltage"])
         battery_percent = (voltage - 3.0) / (4.2 - 3.0) * 100
-        battery_percent = max(0, min(100, battery_percent))  # clamp
+        #battery_percent = max(0, min(100, battery_percent))  # clamp
 
         point = Point("cansat_readings") \
             .tag("device", "ESP32-CANSAT") \
