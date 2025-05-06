@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime, timezone
 from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS, WriteOptions
+import json
 import os
 
 # Load environment variables
@@ -12,7 +14,13 @@ INFLUXDB_BUCKET = os.getenv("INFLUXDB_BUCKET")
 
 # InfluxDB setup
 client = InfluxDBClient(url=INFLUXDB_URL, token=INFLUXDB_TOKEN)
-write_api = client.write_api()
+write_api = client.write_api(write_options=WriteOptions(
+    batch_size=15,
+    flush_interval=1000, 
+    jitter_interval=200,   
+    retry_interval=5000
+))
+
 query_api = client.query_api()
 
 # Flask app
@@ -22,7 +30,7 @@ CORS(app)
 @app.route('/sensor-data', methods=['POST'])
 def receive_data():
     try:
-        data = request.json
+        data = json.loads(request.get_data())
         required_fields = [
             "id", "time", "temperature", "humidity", "pressure",
             "latitude", "longitude", "altitude",
@@ -86,4 +94,4 @@ def get_latest_sensor_data():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
