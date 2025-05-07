@@ -24,7 +24,7 @@ export default function Home() {
           id='cansat'
           heading="Co je to CanSat?"
           description="Soutěž pro týmy studentů, pořádaná Evropskou kosmickou agenturou. Cílem každého týmu je vytvořit 
-          funkční satelit o velikosti plechovky. Satelit je vypuštěn z rakety ve výšce jednoho kilometru."
+          funkční satelit o velikosti plechovky. Satelit je vypuštěn z letadla ve výšce 300-700 metrů."
           image={true}
           imageSrc="/cansat.webp"
           imageAlt="Rocket"
