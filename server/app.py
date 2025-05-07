@@ -33,8 +33,8 @@ def receive_data():
         data = json.loads(request.get_data())
         required_fields = [
             "id", "time", "temperature", "humidity", "pressure",
-            "latitude", "longitude", "altitude",
-            "velocity", "current", "voltage"
+            "latitude", "longitude", "altitude", "velocity", 
+            "current", "voltage", "snr", "rssi"
         ]
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Missing data fields"}), 400
@@ -59,6 +59,8 @@ def receive_data():
             .field("battery", battery_percent) \
             .field("current", float(data["current"])) \
             .field("voltage", voltage) \
+            .field("snr", float(data["snr"])) \
+            .field("rssi", int(data["rssi"])) \
             .time(timestamp_app)
 
         write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
