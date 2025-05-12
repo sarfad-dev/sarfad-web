@@ -45,13 +45,17 @@ def receive_data():
         battery_percent = (voltage - 3.0) / (4.2 - 3.0) * 100
         #battery_percent = max(0, min(100, battery_percent))  # clamp
 
+        pressure = float(data["pressure"])
+        altitude_from_pressure = 44330 * (1.0 - (pressure / 1013.25) ** (1 / 5.255))
+
         point = Point("cansat_readings") \
             .tag("device", "ESP32-CANSAT") \
             .field("id", int(data["id"])) \
             .field("time", data["time"]) \
             .field("temperature", float(data["temperature"])) \
             .field("humidity", float(data["humidity"])) \
-            .field("pressure", float(data["pressure"])) \
+            .field("pressure", pressure) \
+            .field("altitude_pressure", altitude_from_pressure) \
             .field("latitude", float(data["latitude"])) \
             .field("longitude", float(data["longitude"])) \
             .field("altitude", float(data["altitude"])) \
