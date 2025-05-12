@@ -23,7 +23,7 @@ export default function LiveWeb() {
 						<ChartDashboard type="humidity" label="Vlhkost (%)" color="royalblue" yAxisLabel="Vlhkost (%)" yAxisMin={0} yAxisMax={65}/>
 						<ChartDashboard type="pressure" label="Atmosférický tlak (hPa)" color="orange" yAxisLabel="Tlak (hPa)" yAxisMin={800} yAxisMax={1100}/>
 						<ChartDashboard type="battery" label="Odhadovaná kapacita baterie (%)" color="green" yAxisLabel="Kapacita (%)" yAxisMin={0} yAxisMax={100}/>
-						<ChartDashboard type="altitude" label="Nadmořská výška (m)" color="purple" yAxisLabel="Výška (m)" yAxisMin={0} yAxisMax={1000}/>
+						<ChartDashboard type="altitude_pressure" label="Nadmořská výška z tlaku (m)" color="purple" yAxisLabel="Výška (m)" yAxisMin={0} yAxisMax={1000}/>
 						<ChartDashboard type="velocity" label="Rychlost CanSatu (m/s)" color="gray" yAxisLabel="Rychlost (m/s)"/>
 						<ChartDashboard type="current" label="Odebíraný proud (A)" color="yellow" yAxisLabel="Proud (A)" yAxisMin={0} yAxisMax={2}/>
 						<ChartDashboard type="voltage" label="Napětí baterie (V)" color="pink" yAxisLabel="Napětí (V)" yAxisMin={0} yAxisMax={5}/>
