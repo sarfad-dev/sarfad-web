@@ -83,9 +83,9 @@ const ChartDashboard = ({
         <Text color="gray.500">Waiting for data...</Text>
       ) : (
         <>
-          <Flex align="left" gap={2} mb={4} color="gray.600">
-            <Icon as={FaInstagram} boxSize={4} />
-            <Text fontSize="md">@sarfadofficial</Text>
+          <Flex align="center" justify="center" gap={2} mb={4} color="gray.600">
+            <Icon as={FaInstagram} boxSize={5} />
+            <Text fontSize="md" fontWeight="medium">@sarfadofficial</Text>
           </Flex>
           <Line
             data={{
@@ -185,8 +185,8 @@ const ChartDashboard = ({
           />
         </>
       )}
-        </Box>
-      );
+    </Box>
+  );
 };
 
-      export default ChartDashboard;
+export default ChartDashboard;
