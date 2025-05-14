@@ -11,7 +11,8 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Text } from '@chakra-ui/react';
+import { FaInstagram } from 'react-icons/fa';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
@@ -81,105 +82,111 @@ const ChartDashboard = ({
       {dataPoints.length === 0 ? (
         <Text color="gray.500">Waiting for data...</Text>
       ) : (
-        <Line
-          data={{
-            labels: dataPoints.map((p) => p.time),
-            datasets: [
-              {
-                label,
-                data: dataPoints.map((p) => p.value),
-                fill: true,
-                borderColor: color,
-                backgroundColor: rgbaColor,
-                tension: 0.3,
-                pointRadius: 3,
-                pointBackgroundColor: color,
-              },
-            ],
-          }}
-          options={{
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                display: true,
-                position: 'top',
-                labels: {
-                  color: '#2D3748',
-                  font: {
-                    size: 14,
-                    weight: 'bold',
-                  },
-                  boxWidth: 20,
-                  padding: 15,
+        <>
+          <Flex align="left" gap={2} mb={4} color="gray.600">
+            <Icon as={FaInstagram} boxSize={4} />
+            <Text fontSize="sm">@sarfadofficial</Text>
+          </Flex>
+          <Line
+            data={{
+              labels: dataPoints.map((p) => p.time),
+              datasets: [
+                {
+                  label,
+                  data: dataPoints.map((p) => p.value),
+                  fill: true,
+                  borderColor: color,
+                  backgroundColor: rgbaColor,
+                  tension: 0.3,
+                  pointRadius: 3,
+                  pointBackgroundColor: color,
                 },
-              },
-              tooltip: {
-                backgroundColor: '#2D3748',
-                titleColor: '#fff',
-                bodyColor: '#fff',
-              },
-            },
-            layout: {
-              padding: {
-                top: 10,
-                bottom: 40,
-                left: 10,
-                right: 10,
-              },
-            },
-            scales: {
-              x: {
-                ticks: {
-                  color: '#4A5568',
-                  maxRotation: 25,
-                  minRotation: 25,
-                  font: {
-                    size: 12,
-                  },
-                  padding: 10,
-                },
-                title: {
-                  display: !!xAxisLabel,
-                  text: xAxisLabel,
-                  color: '#4A5568',
-                  font: {
-                    size: 14,
-                    weight: 'bold',
+              ],
+            }}
+            options={{
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: 'top',
+                  labels: {
+                    color: '#2D3748',
+                    font: {
+                      size: 14,
+                      weight: 'bold',
+                    },
+                    boxWidth: 20,
+                    padding: 15,
                   },
                 },
-                grid: {
-                  color: 'rgba(0, 0, 0, 0.05)',
+                tooltip: {
+                  backgroundColor: '#2D3748',
+                  titleColor: '#fff',
+                  bodyColor: '#fff',
                 },
               },
-              y: {
-                ticks: {
-                  color: '#4A5568',
-                  font: {
-                    size: 12,
-                  },
+              layout: {
+                padding: {
+                  top: 10,
+                  bottom: 40,
+                  left: 10,
+                  right: 10,
                 },
-                title: {
-                  display: !!yAxisLabel,
-                  text: yAxisLabel,
-                  color: '#4A5568',
-                  font: {
-                    size: 14,
-                    weight: 'bold',
-                  },
-                },
-                grid: {
-                  color: 'rgba(0, 0, 0, 0.05)',
-                },
-                min: yAxisMin,
-                max: yAxisMax,
               },
-            },
-          }}
-        />
+              scales: {
+                x: {
+                  ticks: {
+                    color: '#4A5568',
+                    maxRotation: 25,
+                    minRotation: 25,
+                    font: {
+                      size: 12,
+                    },
+                    padding: 10,
+                  },
+                  title: {
+                    display: !!xAxisLabel,
+                    text: xAxisLabel,
+                    color: '#4A5568',
+                    font: {
+                      size: 14,
+                      weight: 'bold',
+                    },
+                  },
+                  grid: {
+                    color: 'rgba(0, 0, 0, 0.05)',
+                  },
+                },
+                y: {
+                  ticks: {
+                    color: '#4A5568',
+                    font: {
+                      size: 12,
+                    },
+                  },
+                  title: {
+                    display: !!yAxisLabel,
+                    text: yAxisLabel,
+                    color: '#4A5568',
+                    font: {
+                      size: 14,
+                      weight: 'bold',
+                    },
+                  },
+                  grid: {
+                    color: 'rgba(0, 0, 0, 0.05)',
+                  },
+                  min: yAxisMin,
+                  max: yAxisMax,
+                },
+              },
+            }}
+          />
+        </>
       )}
-    </Box>
-  );
+        </Box>
+      );
 };
 
-export default ChartDashboard;
+      export default ChartDashboard;
