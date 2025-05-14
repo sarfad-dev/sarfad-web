@@ -85,7 +85,7 @@ const ChartDashboard = ({
         <>
           <Flex align="left" gap={2} mb={4} color="gray.600">
             <Icon as={FaInstagram} boxSize={4} />
-            <Text fontSize="sm">@sarfadofficial</Text>
+            <Text fontSize="md">@sarfadofficial</Text>
           </Flex>
           <Line
             data={{
