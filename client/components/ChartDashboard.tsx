@@ -83,7 +83,7 @@ const ChartDashboard = ({
         <Text color="gray.500">Waiting for data...</Text>
       ) : (
         <>
-          <Flex align="center" justify="center" gap={2} mb={4} color="gray.600">
+          <Flex align="left" justify="center" gap={2} mb={4} color="gray.600">
             <Icon as={FaInstagram} boxSize={5} />
             <Text fontSize="md" fontWeight="medium">@sarfadofficial</Text>
           </Flex>
